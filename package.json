@@ -1,0 +1,36 @@
+{
+  "name": "ben-nutritionniste",
+  "version": "1.0.0",
+  "description": "Site web professionnel pour Ben.Nutritionniste - Nutrition Sportive",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Site statique - pas de build nécessaire'",
+    "serve": "firebase serve",
+    "deploy": "firebase deploy",
+    "deploy:hosting": "firebase deploy --only hosting",
+    "init": "firebase init",
+    "login": "firebase login",
+    "logout": "firebase logout",
+    "open": "firebase open hosting:site"
+  },
+  "keywords": [
+    "nutrition",
+    "sportive",
+    "nutritionniste",
+    "performance",
+    "quebec",
+    "benoitboulanger"
+  ],
+  "author": "Benoît Boulanger <benoit.boulanger.2@ulaval.ca>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/ben-nutritionniste"
+  },
+  "devDependencies": {
+    "firebase-tools": "^13.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
