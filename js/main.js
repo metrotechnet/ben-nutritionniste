@@ -12,68 +12,143 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeInstagramSection();
     initializeContactForm();
     initializeScrollToTop();
+    initializeStatsAnimation();
+    initializeSkillBars();
+    initializeInstagramMetrics();
+    initializeFooterAnimations();
 });
 
 // ===============================================
 // NAVIGATION FUNCTIONALITY
 // ===============================================
 function initializeNavigation() {
-    const hamburger = document.getElementById('hamburger');
+    const mobileToggle = document.getElementById('mobile-toggle');
     const navMenu = document.getElementById('nav-menu');
+    const mobileOverlay = document.getElementById('mobile-overlay');
     const navLinks = document.querySelectorAll('.nav-link');
+    const navbar = document.getElementById('navbar');
     
     // Mobile menu toggle
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
+    if (mobileToggle && navMenu && mobileOverlay) {
+        mobileToggle.addEventListener('click', function() {
+            mobileToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        // Close menu when overlay is clicked
+        mobileOverlay.addEventListener('click', function() {
+            closeMobileMenu();
         });
     }
     
     // Close mobile menu when link is clicked
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            if (hamburger) hamburger.classList.remove('active');
-            if (navMenu) navMenu.classList.remove('active');
+            closeMobileMenu();
+        });
+    });
+    
+    // Close menu function
+    function closeMobileMenu() {
+        if (mobileToggle) mobileToggle.classList.remove('active');
+        if (navMenu) navMenu.classList.remove('active');
+        if (mobileOverlay) mobileOverlay.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
+    
+    // Smooth scrolling for navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
     
     // Update active nav link on scroll
     window.addEventListener('scroll', updateActiveNavLink);
     
-    // Navbar background on scroll
-    window.addEventListener('scroll', updateNavbarBackground);
+    // Navbar effects on scroll
+    window.addEventListener('scroll', updateNavbarEffects);
+    
+    // Scroll progress bar
+    window.addEventListener('scroll', updateScrollProgress);
+    
+    // Auto-hide navbar on scroll
+    initializeAutoHideNavbar();
 }
 
 function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link[data-section]');
+    
+    let current = '';
     const scrollPos = window.scrollY + 100;
-    const navLinks = document.querySelectorAll('.nav-link');
     
     sections.forEach(section => {
-        const top = section.offsetTop;
-        const bottom = top + section.offsetHeight;
-        const id = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
         
-        if (scrollPos >= top && scrollPos <= bottom) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            if (navLink) navLink.classList.add('active');
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-section') === current) {
+            link.classList.add('active');
         }
     });
 }
 
-function updateNavbarBackground() {
-    const navbar = document.querySelector('.navbar');
+function updateNavbarEffects() {
+    const navbar = document.getElementById('navbar');
     if (navbar) {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = 'none';
+            navbar.classList.remove('scrolled');
         }
     }
+}
+
+function updateScrollProgress() {
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        progressBar.style.width = `${Math.min(scrolled, 100)}%`;
+    }
+}
+
+function initializeAutoHideNavbar() {
+    let lastScrollTop = 0;
+    const navbar = document.getElementById('navbar');
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+            // Scrolling down
+            navbar.classList.add('hidden');
+        } else {
+            // Scrolling up
+            navbar.classList.remove('hidden');
+        }
+        
+        lastScrollTop = scrollTop;
+    }, { passive: true });
 }
 
 // ===============================================
@@ -134,30 +209,186 @@ function initializeScrollAnimations() {
 // ===============================================
 function initializeInstagramSection() {
     const instagramPosts = document.querySelectorAll('.instagram-post');
-    const instagramHandle = document.querySelector('.instagram-handle');
+    const highlightItems = document.querySelectorAll('.highlight-item');
     
-    // Instagram post interactions
+    // Post interactions
     instagramPosts.forEach(post => {
-        post.addEventListener('click', function() {
-            window.open('https://instagram.com/ben.nutritionniste', '_blank');
-        });
-        
-        // Add hover effect
         post.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.05)';
+            this.style.transform = 'translateY(-8px) scale(1.02)';
         });
         
         post.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
+            this.style.transform = 'translateY(0) scale(1)';
         });
     });
     
-    // Instagram handle click
-    if (instagramHandle) {
-        instagramHandle.addEventListener('click', function() {
-            window.open('https://instagram.com/ben.nutritionniste', '_blank');
+    // Highlight interactions
+    highlightItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Simulate opening Instagram story highlight
+            window.open('https://www.instagram.com/ben.nutritionniste/', '_blank');
         });
+    });
+    
+    // Initialize stats animation for Instagram section
+    initializeInstagramStats();
+}
+
+// Nouvelle fonction pour ouvrir Instagram
+function openInstagram() {
+    window.open('https://www.instagram.com/ben.nutritionniste/', '_blank');
+}
+
+// Fonction pour partager Instagram
+function shareInstagram() {
+    if (navigator.share) {
+        navigator.share({
+            title: 'Ben Nutritionniste - Nutrition Sportive',
+            text: 'Découvrez les conseils nutrition de Ben sur Instagram !',
+            url: 'https://www.instagram.com/ben.nutritionniste/'
+        });
+    } else {
+        // Fallback pour les navigateurs qui ne supportent pas l'API Web Share
+        const url = encodeURIComponent('https://www.instagram.com/ben.nutritionniste/');
+        const text = encodeURIComponent('Découvrez les conseils nutrition de Ben sur Instagram !');
+        
+        // Essayer de copier le lien
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText('https://www.instagram.com/ben.nutritionniste/');
+            alert('Lien Instagram copié dans le presse-papiers !');
+        } else {
+            // Ouvrir une nouvelle fenêtre avec des options de partage
+            const shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+            window.open(shareUrl, '_blank');
+        }
     }
+}
+
+// Animation des statistiques Instagram
+function initializeInstagramStats() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = entry.target.querySelectorAll('.stat-number');
+                statNumbers.forEach(number => {
+                    animateInstagramCounter(number);
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    const statsSection = document.querySelector('.instagram-stats');
+    if (statsSection) {
+        observer.observe(statsSection);
+    }
+}
+
+function animateInstagramCounter(element) {
+    const target = parseInt(element.dataset.count);
+    const format = element.dataset.format;
+    const duration = 2500;
+    const start = performance.now();
+    
+    function updateCounter(currentTime) {
+        const elapsed = currentTime - start;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function pour une animation fluide
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(target * easeOut);
+        
+        // Format du nombre
+        let displayValue = current.toString();
+        if (format === 'K' && current >= 1000) {
+            displayValue = (current / 1000).toFixed(1) + 'K';
+        } else if (format === 'K') {
+            displayValue = current.toString() + (progress === 1 ? 'K' : '');
+        }
+        
+        element.textContent = displayValue;
+        
+        if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+        } else {
+            // Valeur finale
+            let finalValue = target.toString();
+            if (format === 'K') {
+                finalValue = (target / 1000).toFixed(1) + 'K';
+            }
+            element.textContent = finalValue;
+        }
+    }
+    
+    requestAnimationFrame(updateCounter);
+}
+
+// ===============================================
+// INSTAGRAM METRICS ANIMATION
+// ===============================================
+function initializeInstagramMetrics() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const metricNumbers = entry.target.querySelectorAll('.metric-number');
+                metricNumbers.forEach(number => {
+                    animateMetricCounter(number);
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    const metricsSection = document.querySelector('.instagram-metrics');
+    if (metricsSection) {
+        observer.observe(metricsSection);
+    }
+}
+
+function animateMetricCounter(element) {
+    const target = parseInt(element.dataset.count);
+    const format = element.dataset.format;
+    const suffix = element.dataset.suffix || '';
+    const duration = 2000;
+    const start = performance.now();
+    
+    function updateCounter(currentTime) {
+        const elapsed = currentTime - start;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function for smooth animation
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(target * easeOut);
+        
+        // Format the number
+        let displayValue = current.toString();
+        if (format === 'K' && current >= 1000) {
+            displayValue = (current / 1000).toFixed(1) + 'K';
+        } else if (format === 'K') {
+            displayValue = current.toString() + (progress === 1 ? 'K' : '');
+        }
+        
+        element.textContent = displayValue + suffix;
+        
+        if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+        } else {
+            // Final value
+            let finalValue = target.toString();
+            if (format === 'K') {
+                finalValue = (target / 1000).toFixed(1) + 'K';
+            }
+            element.textContent = finalValue + suffix;
+        }
+    }
+    
+    requestAnimationFrame(updateCounter);
 }
 
 // ===============================================
@@ -165,89 +396,194 @@ function initializeInstagramSection() {
 // ===============================================
 function initializeContactForm() {
     const contactForm = document.getElementById('contact-form');
+    const messageTextarea = document.querySelector('#message');
+    const characterCounter = document.querySelector('.character-counter .current');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            handleFormSubmission(this);
+            handleModernFormSubmission(this);
         });
     }
+    
+    // Character counter for textarea
+    if (messageTextarea && characterCounter) {
+        messageTextarea.addEventListener('input', function() {
+            const length = this.value.length;
+            characterCounter.textContent = length;
+            
+            // Change color based on length
+            if (length > 450) {
+                characterCounter.style.color = '#ef4444';
+            } else if (length > 300) {
+                characterCounter.style.color = '#f59e0b';
+            } else {
+                characterCounter.style.color = 'var(--primary-color)';
+            }
+        });
+    }
+    
+    // Enhanced input animations
+    const inputs = document.querySelectorAll('.modern-contact-form input, .modern-contact-form select, .modern-contact-form textarea');
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', function() {
+            this.parentElement.classList.remove('focused');
+        });
+    });
 }
 
-function handleFormSubmission(form) {
-    // Get form data
+function handleModernFormSubmission(form) {
+    const submitBtn = form.querySelector('.submit-btn');
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
     
     // Validate form
-    if (validateForm(data)) {
+    if (validateModernForm(data)) {
         // Show loading state
-        showFormLoading(form);
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
         
         // Simulate form submission (replace with actual API call)
         setTimeout(() => {
-            showFormSuccess(form);
-            form.reset();
-        }, 2000);
+            submitBtn.classList.remove('loading');
+            submitBtn.classList.add('success');
+            
+            // Reset form after success
+            setTimeout(() => {
+                form.reset();
+                submitBtn.classList.remove('success');
+                submitBtn.disabled = false;
+                
+                // Reset character counter
+                const counter = document.querySelector('.character-counter .current');
+                if (counter) {
+                    counter.textContent = '0';
+                    counter.style.color = 'var(--primary-color)';
+                }
+            }, 2000);
+        }, 2500);
     } else {
-        showFormError(form, 'Veuillez remplir tous les champs obligatoires.');
+        // Show validation errors
+        showModernFormErrors(form);
     }
 }
 
-function validateForm(data) {
-    return data.name && data.email && data.message && 
-           data.email.includes('@') && data.email.includes('.');
+function validateModernForm(data) {
+    const required = ['firstName', 'lastName', 'email', 'service', 'message'];
+    return required.every(field => data[field] && data[field].trim() !== '');
 }
 
-function showFormLoading(form) {
-    const submitButton = form.querySelector('button[type="submit"]');
-    if (submitButton) {
-        submitButton.textContent = 'Envoi en cours...';
-        submitButton.disabled = true;
-        form.classList.add('loading');
-    }
-}
-
-function showFormSuccess(form) {
-    const submitButton = form.querySelector('button[type="submit"]');
-    if (submitButton) {
-        submitButton.textContent = 'Message envoyé !';
-        submitButton.style.background = '#51CF66';
-        form.classList.remove('loading');
-        
-        setTimeout(() => {
-            submitButton.textContent = 'Envoyer le message';
-            submitButton.disabled = false;
-            submitButton.style.background = '';
-        }, 3000);
-    }
-}
-
-function showFormError(form, message) {
-    // Create or update error message
-    let errorDiv = form.querySelector('.form-error');
-    if (!errorDiv) {
-        errorDiv = document.createElement('div');
-        errorDiv.className = 'form-error';
-        errorDiv.style.cssText = `
-            color: #FF6B6B;
-            background: rgba(255, 107, 107, 0.1);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-            border: 1px solid rgba(255, 107, 107, 0.2);
-        `;
-        form.appendChild(errorDiv);
-    }
-    
-    errorDiv.textContent = message;
-    
-    // Remove error after 5 seconds
-    setTimeout(() => {
-        if (errorDiv.parentNode) {
-            errorDiv.parentNode.removeChild(errorDiv);
+function showModernFormErrors(form) {
+    const requiredFields = form.querySelectorAll('[required]');
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            field.style.borderColor = '#ef4444';
+            field.addEventListener('input', function() {
+                this.style.borderColor = '#e2e8f0';
+            }, { once: true });
         }
-    }, 5000);
+    });
+}
+
+// Copy to clipboard function
+function copyToClipboard(text) {
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+            showCopySuccess();
+        });
+    } else {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        showCopySuccess();
+    }
+}
+
+function showCopySuccess() {
+    // Create temporary success message
+    const message = document.createElement('div');
+    message.textContent = 'Copié !';
+    message.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #10b981;
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 25px;
+        font-weight: 600;
+        z-index: 10000;
+        animation: slideInRight 0.3s ease-out;
+    `;
+    
+    document.body.appendChild(message);
+    
+    setTimeout(() => {
+        message.style.animation = 'slideOutRight 0.3s ease-out';
+        setTimeout(() => {
+            document.body.removeChild(message);
+        }, 300);
+    }, 2000);
+}
+
+// Anciennes fonctions supprimées - remplacées par les nouvelles fonctions modernes
+
+// ===============================================
+// FOOTER ANIMATIONS
+// ===============================================
+function initializeFooterAnimations() {
+    const footer = document.querySelector('.modern-footer');
+    if (!footer) return;
+    
+    // Intersection Observer pour les animations d'apparition
+    const footerElements = footer.querySelectorAll('.footer-brand-card, .footer-nav-column, .contact-premium-item');
+    
+    const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 100);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    footerElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        footerObserver.observe(element);
+    });
+    
+    // Animation des particules en arrière-plan
+    animateFooterParticles();
+}
+
+function animateFooterParticles() {
+    const particles = document.querySelector('.footer-bg-particles');
+    if (particles) {
+        let offset = 0;
+        
+        function animate() {
+            offset += 0.5;
+            particles.style.transform = `translateY(${Math.sin(offset * 0.01) * 10}px)`;
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+    }
 }
 
 // ===============================================
@@ -427,6 +763,91 @@ window.addEventListener('error', function(e) {
     console.error('JavaScript error:', e.error);
     // You can send this to an error reporting service
 });
+
+// ===============================================
+// SKILL BARS ANIMATION
+// ===============================================
+function initializeSkillBars() {
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progressBars = entry.target.querySelectorAll('.progress-bar[data-width]');
+                progressBars.forEach(bar => {
+                    const width = bar.getAttribute('data-width');
+                    setTimeout(() => {
+                        bar.style.width = width + '%';
+                    }, 200);
+                });
+                skillObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    const skillsSection = document.querySelector('.about-skills');
+    if (skillsSection) {
+        skillObserver.observe(skillsSection);
+    }
+}
+
+// ===============================================
+// STATS ANIMATION
+// ===============================================
+function initializeStatsAnimation() {
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = entry.target.querySelectorAll('.stat-number[data-count]');
+                statNumbers.forEach(animateStatNumber);
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    // Observe hero stats
+    const heroStats = document.querySelector('.hero-stats');
+    if (heroStats) {
+        statsObserver.observe(heroStats);
+    }
+
+    // Observe Instagram stats
+    const instagramStats = document.querySelector('.instagram-stats');
+    if (instagramStats) {
+        statsObserver.observe(instagramStats);
+    }
+}
+
+function animateStatNumber(element) {
+    const target = parseInt(element.getAttribute('data-count'));
+    const suffix = element.getAttribute('data-suffix') || '';
+    const format = element.getAttribute('data-format');
+    const duration = 2000; // 2 seconds
+    const increment = target / (duration / 16); // 60 FPS
+    let current = 0;
+
+    const timer = setInterval(() => {
+        current += increment;
+        
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+
+        let displayValue = Math.floor(current);
+        
+        // Handle special formatting
+        if (format === 'K' && target >= 1000) {
+            displayValue = (current / 1000).toFixed(1) + 'K';
+        } else {
+            displayValue = Math.floor(current) + suffix;
+        }
+        
+        element.textContent = displayValue;
+    }, 16);
+}
 
 // Handle unhandled promise rejections
 window.addEventListener('unhandledrejection', function(e) {

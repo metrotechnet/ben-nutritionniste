@@ -18,433 +18,989 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">
-                    <i class="fas fa-leaf nav-icon"></i>
-                    <span>Ben.<strong>Nutritionniste</strong></span>
-                </a>
+    <!-- Navigation moderne -->
+    <header class="navigation-header">
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                
+                <!-- Logo avec animation -->
+                <div class="nav-brand">
+                    <a href="#home" class="brand-link">
+                        <div class="brand-icon">
+                            <i class="fas fa-leaf"></i>
+                            <div class="icon-pulse"></div>
+                        </div>
+                        <div class="brand-text">
+                            <span class="brand-name">Ben</span>
+                            <span class="brand-title">Nutritionniste</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Menu principal -->
+                <div class="nav-menu" id="nav-menu">
+                    <div class="nav-menu-inner">
+                        <ul class="nav-links">
+                            <li class="nav-item">
+                                <a href="#home" class="nav-link active" data-section="home">
+                                    <span class="nav-text">Accueil</span>
+                                    <div class="nav-indicator"></div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#about" class="nav-link" data-section="about">
+                                    <span class="nav-text">À propos</span>
+                                    <div class="nav-indicator"></div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#services" class="nav-link" data-section="services">
+                                    <span class="nav-text">Services</span>
+                                    <div class="nav-indicator"></div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#instagram" class="nav-link" data-section="instagram">
+                                    <span class="nav-text">Instagram</span>
+                                    <div class="nav-badge">
+                                        <i class="fab fa-instagram"></i>
+                                    </div>
+                                    <div class="nav-indicator"></div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#contact" class="nav-link" data-section="contact">
+                                    <span class="nav-text">Contact</span>
+                                    <div class="nav-indicator"></div>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                        <!-- CTA principal -->
+                        <div class="nav-cta">
+                            <a href="#consultation" class="consultation-btn">
+                                <span class="btn-text">Consultation</span>
+                                <div class="btn-icon">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="btn-shine"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bouton menu mobile -->
+                <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Menu mobile">
+                    <div class="hamburger-wrapper">
+                        <span class="hamburger-line line-1"></span>
+                        <span class="hamburger-line line-2"></span>
+                        <span class="hamburger-line line-3"></span>
+                    </div>
+                    <span class="menu-text">Menu</span>
+                </button>
+                
+                <!-- Indicateur de progression de lecture -->
+                <div class="scroll-progress">
+                    <div class="progress-bar"></div>
+                </div>
+                
             </div>
-            
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link active">Accueil</a>
-                <a href="#about" class="nav-link">À propos</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#blog" class="nav-link">Blog</a>
-                <a href="#instagram" class="nav-link">Instagram</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="#consultation" class="nav-link btn-outline">Consultation</a>
-            </div>
-            
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+        </nav>
+        
+        <!-- Overlay mobile -->
+        <div class="mobile-overlay" id="mobile-overlay"></div>
+        
+    </header>
 
-    <!-- Hero Section -->
+    <!-- ===============================================
+         HERO SECTION - Page d'accueil principale
+         =============================================== -->
     <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+        </div>
+        
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-text">
+                
+                <!-- Section principale avec titre et description -->
+                <div class="hero-main">
+                    <div class="hero-badge">
+                        <i class="fas fa-leaf"></i>
+                        <span>Nutritionniste Professionnel</span>
+                    </div>
+                    
                     <h1 class="hero-title">
-                        <span class="gradient-text">Nutrition Sportive</span><br>
-                        Inclusive & Intuitive
+                        <span class="title-line-1">Nutrition Sportive</span>
+                        <span class="title-line-2 gradient-text">Inclusive & Intuitive</span>
                     </h1>
+                    
                     <p class="hero-description">
                         Nutritionniste spécialisé en performance sportive, athlète professionnel et doctorant en nutrition. 
                         Une approche unique pour optimiser vos performances et votre bien-être.
                     </p>
+                    
                     <div class="hero-buttons">
-                        <a href="#consultation" class="btn btn-primary">
+                        <a href="#consultation" class="btn btn-primary btn-large">
                             <i class="fas fa-calendar-check"></i>
-                            Réserver une consultation
+                            <span>Réserver une consultation</span>
                         </a>
-                        <a href="#about" class="btn btn-secondary">
-                            <i class="fas fa-user"></i>
-                            Découvrir mon approche
+                        <a href="#about" class="btn btn-outline btn-large">
+                            <i class="fas fa-play"></i>
+                            <span>Voir mon parcours</span>
                         </a>
                     </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <div class="stat-number">5+</div>
-                            <div class="stat-label">Années d'expérience</div>
+                </div>
+                
+                <!-- Section profil et contact -->
+                <div class="hero-profile">
+                    <div class="profile-card">
+                        <div class="profile-image">
+                            <img src="assets/images/DSC08373.jpg" 
+                                 alt="Benoît Boulanger, Nutritionniste Sportif"
+                                 loading="eager">
+                            <div class="profile-badge">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
                         </div>
-                        <div class="stat">
-                            <div class="stat-number">500+</div>
-                            <div class="stat-label">Athlètes accompagnés</div>
+                        
+                        <div class="profile-info">
+                            <h3>Benoît Boulanger</h3>
+                            <p class="profile-title">Dt.P., Nutritionniste Sportif</p>
+                            <p class="profile-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Québec, Canada
+                            </p>
                         </div>
-                        <div class="stat">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Satisfaction client</div>
+                        
+                        <div class="profile-actions">
+                            <a href="tel:+15818886103" class="contact-btn contact-phone">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                            <a href="mailto:benoit.boulanger.2@ulaval.ca" class="contact-btn contact-email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://www.instagram.com/ben.nutritionniste" 
+                               class="contact-btn contact-instagram"
+                               target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-instagram"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="hero-card">
-                        <div class="card-content">
-                            <div class="profile-image">
-                                <img src="assets/images/DSC08373.jpg" alt="Benoît Boulanger, Nutritionniste Sportif">
-                            </div>
-                            <h3>Benoît Boulanger</h3>
-                            <p>Dt.P., Nutritionniste Sportif</p>
-                            <div class="social-links">
-                                <a href="tel:+15818886103" aria-label="Téléphone"><i class="fas fa-phone"></i></a>
-                                <a href="mailto:benoit.boulanger.2@ulaval.ca" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                                <a href="https://www.instagram.com/ben.nutritionniste" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.facebook.com/benoitboulanger" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                
+            </div>
+            
+            <!-- Statistiques en bas -->
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number" data-count="5" data-suffix="+">0+</div>
+                    <div class="stat-label">Années d'expérience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="500" data-suffix="+">0+</div>
+                    <div class="stat-label">Athlètes accompagnés</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="100" data-suffix="%">0%</div>
+                    <div class="stat-label">Satisfaction client</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="15" data-suffix="+">0+</div>
+                    <div class="stat-label">Certifications</div>
                 </div>
             </div>
         </div>
+        
+        <!-- Élément décoratif de transition -->
         <div class="hero-wave">
-            <svg viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 1440 200" 
+                 xmlns="http://www.w3.org/2000/svg"
+                 aria-hidden="true">
                 <path d="M0,64L48,80C96,96,192,128,288,133.3C384,139,480,117,576,112C672,107,768,117,864,138.7C960,160,1056,192,1152,186.7C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
             </svg>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ===============================================
+         ABOUT SECTION - Qui je suis
+         =============================================== -->
     <section id="about" class="about">
+        <div class="about-background">
+            <div class="background-pattern"></div>
+        </div>
+        
         <div class="container">
+            <!-- En-tête de section -->
             <div class="section-header">
-                <span class="section-tag">À propos</span>
-                <h2 class="section-title">Une approche unique de la nutrition sportive</h2>
+                <div class="section-badge">
+                    <i class="fas fa-user"></i>
+                    <span>À propos</span>
+                </div>
+                <h2 class="section-title">
+                    Une approche <span class="highlight-text">unique</span> de la nutrition sportive
+                </h2>
                 <p class="section-description">
-                    Athlète professionnel, nutritionniste et doctorant en nutrition, je combine expérience pratique et expertise scientifique
+                    Athlète professionnel, nutritionniste et doctorant en nutrition, je combine expérience pratique et expertise scientifique pour vous accompagner vers l'excellence.
                 </p>
             </div>
             
-            <div class="about-grid">
-                <div class="about-content">
-                    <div class="about-card">
-                        <div class="card-icon">
-                            <i class="fas fa-graduation-cap"></i>
+            <!-- Contenu principal -->
+            <div class="about-main">
+                
+                <!-- Section story personnelle -->
+                <div class="about-story">
+                    <div class="story-content">
+                        <div class="story-intro">
+                            <h3>Mon parcours</h3>
+                            <p class="story-lead">
+                                De la compétition de haut niveau à la consultation nutritionnelle, mon chemin m'a menée à développer une approche holistique de la performance.
+                            </p>
                         </div>
-                        <h3>Formation & Expertise</h3>
-                        <p>Nutritionniste Dt.P. et doctorant en nutrition à l'Université Laval, spécialisé en nutrition sportive avec une approche scientifique rigoureuse.</p>
-                    </div>
-                    
-                    <div class="about-card">
-                        <div class="card-icon">
-                            <i class="fas fa-running"></i>
+                        
+                        <div class="story-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-running"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Athlète Professionnel</h4>
+                                    <p>Expérience concrète des défis de la performance sportive et de l'optimisation nutritionnelle en compétition.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Formation Académique</h4>
+                                    <p>Nutritionniste Dt.P. et doctorant en nutrition à l'Université Laval, avec une spécialisation en nutrition sportive.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Approche Holistique</h4>
+                                    <p>Développement d'une méthode inclusive et intuitive, respectueuse de la relation avec l'alimentation.</p>
+                                </div>
+                            </div>
                         </div>
-                        <h3>Athlète Professionnel</h3>
-                        <p>Une perspective unique grâce à mon expérience d'athlète professionnel, comprenant les défis réels de la performance sportive.</p>
-                    </div>
-                    
-                    <div class="about-card">
-                        <div class="card-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3>Approche Inclusive</h3>
-                        <p>Nutrition sportive inclusive et intuitive, respectueuse de votre relation avec l'alimentation et adaptée à vos besoins uniques.</p>
                     </div>
                 </div>
                 
-                <div class="about-image">
-                    <div class="about-photo">
-                        <img src="assets/images/DSC08373.jpg" alt="Benoît Boulanger - Nutritionniste et Athlète Professionnel">
-                        <div class="photo-overlay">
-                            <p>Nutrition & Performance</p>
+                <!-- Section expertise -->
+                <div class="about-expertise">
+                    <div class="expertise-image">
+                        <div class="image-container">
+                            <img src="assets/images/BEN_1.png" 
+                                 alt="Benoît Boulanger - Nutritionniste et Athlète Professionnel"
+                                 loading="lazy">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h4>Nutrition & Performance</h4>
+                                    <p>Expertise scientifique + Expérience terrain</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
+            
+            <!-- Cartes de compétences -->
+            <div class="about-skills">
+                <div class="skills-grid">
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h4>Recherche & Science</h4>
+                            <p>Doctorant en nutrition avec une approche basée sur les dernières recherches scientifiques.</p>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="95"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h4>Performance Sportive</h4>
+                            <p>Optimisation nutritionnelle pour tous types de sports et niveaux de performance.</p>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="90"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="skill-content">
+                            <h4>Accompagnement</h4>
+                            <p>Suivi personnalisé et bienveillant, adapté à votre relation avec l'alimentation.</p>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="98"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- CTA section -->
+            <div class="about-cta">
+                <div class="cta-content">
+                    <h3>Prêt à optimiser votre nutrition ?</h3>
+                    <p>Découvrons ensemble comment une nutrition adaptée peut transformer vos performances.</p>
+                    <div class="cta-actions">
+                        <a href="#consultation" class="btn btn-primary btn-large">
+                            <i class="fas fa-calendar-check"></i>
+                            Réserver une consultation
+                        </a>
+                        <a href="#services" class="btn btn-outline btn-large">
+                            <i class="fas fa-arrow-down"></i>
+                            Découvrir mes services
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- ===============================================
+         SERVICES SECTION - Mes solutions
+         =============================================== -->
     <section id="services" class="services">
+        <div class="services-background">
+            <div class="background-shapes"></div>
+        </div>
+        
         <div class="container">
+            <!-- En-tête de section -->
             <div class="section-header">
-                <span class="section-tag">Services</span>
-                <h2 class="section-title">Solutions nutritionnelles personnalisées</h2>
+                <div class="section-badge">
+                    <i class="fas fa-cogs"></i>
+                    <span>Services</span>
+                </div>
+                <h2 class="section-title">
+                    Solutions <span class="highlight-text">nutritionnelles</span> personnalisées
+                </h2>
                 <p class="section-description">
-                    Du suivi individuel aux conférences, découvrez mes services adaptés à vos objectifs
+                    Du suivi individuel aux conférences, découvrez mes services adaptés à vos objectifs de performance et de bien-être.
                 </p>
             </div>
             
+            <!-- Grille des services -->
             <div class="services-grid">
-                <!-- Consultations -->
-                <div class="service-card featured">
-                    <div class="card-header">
-                        <div class="service-icon">
+                
+                <!-- Consultation phare -->
+                <div class="service-card premium-card">
+                    <div class="card-badge">
+                        <i class="fas fa-star"></i>
+                        <span>Recommandé</span>
+                    </div>
+                    <div class="service-header">
+                        <div class="service-icon primary">
                             <i class="fas fa-user-md"></i>
                         </div>
-                        <div class="service-badge">Populaire</div>
-                    </div>
-                    <h3>Consultations Individuelles</h3>
-                    <p>Suivi personnalisé avec évaluation complète, objectifs adaptés et guide nutritionnel personnalisé.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Évaluation nutritionnelle complète</li>
-                        <li><i class="fas fa-check"></i> Guide personnalisé inclus</li>
-                        <li><i class="fas fa-check"></i> Plateforme KEENOA</li>
-                        <li><i class="fas fa-check"></i> Support continu</li>
-                    </ul>
-                    <div class="service-pricing">
-                        <span class="price">210$ CAD</span>
-                        <span class="duration">60-75 min</span>
-                    </div>
-                    <a href="#consultation" class="btn btn-primary">Réserver</a>
-                </div>
-                
-                <!-- Nutrition de Performance -->
-                <div class="service-card">
-                    <div class="card-header">
-                        <div class="service-icon">
-                            <i class="fas fa-trophy"></i>
+                        <div class="service-meta">
+                            <h3>Consultation Individuelle</h3>
+                            <p class="service-subtitle">Suivi personnalisé complet</p>
                         </div>
                     </div>
-                    <h3>Nutrition de Performance</h3>
-                    <p>Planification nutritionnelle spécialisée pour compétitions, marathons, Ironman et événements sportifs.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Plan de nutrition de compétition</li>
-                        <li><i class="fas fa-check"></i> Stratégie de carbloading</li>
-                        <li><i class="fas fa-check"></i> Conseils supplémentation</li>
-                        <li><i class="fas fa-check"></i> Suivi d'événement inclus</li>
-                    </ul>
-                    <div class="service-pricing">
-                        <span class="price">305$ CAD</span>
-                        <span class="duration">Plan + Suivi</span>
+                    
+                    <p class="service-description">
+                        Évaluation nutritionnelle approfondie avec objectifs adaptés et guide personnalisé pour optimiser vos performances.
+                    </p>
+                    
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Évaluation nutritionnelle complète</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Guide personnalisé inclus</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Accès plateforme KEENOA</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Support continu inclus</span>
+                        </div>
                     </div>
-                    <a href="#consultation" class="btn btn-outline">Réserver</a>
+                    
+                    <div class="service-pricing">
+                        <div class="price-main">
+                            <span class="currency">$</span>
+                            <span class="amount">210</span>
+                            <span class="currency">CAD</span>
+                        </div>
+                        <div class="price-details">
+                            <span class="duration">60-75 minutes</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#consultation" class="btn btn-primary btn-service">
+                        <i class="fas fa-calendar-check"></i>
+                        Réserver maintenant
+                    </a>
+                </div>
+                
+                <!-- Nutrition de performance -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon success">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="service-meta">
+                            <h3>Nutrition de Performance</h3>
+                            <p class="service-subtitle">Optimisation compétitive</p>
+                        </div>
+                    </div>
+                    
+                    <p class="service-description">
+                        Stratégies nutritionnelles avancées pour compétitions, marathons et événements sportifs de haut niveau.
+                    </p>
+                    
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Plan nutritionnel de compétition</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Stratégie de carbloading</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Protocole de supplémentation</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Suivi d'événement personnalisé</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-pricing">
+                        <div class="price-main">
+                            <span class="currency">$</span>
+                            <span class="amount">305</span>
+                            <span class="currency">CAD</span>
+                        </div>
+                        <div class="price-details">
+                            <span class="duration">Plan + Suivi complet</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#consultation" class="btn btn-outline btn-service">
+                        <i class="fas fa-rocket"></i>
+                        Découvrir
+                    </a>
                 </div>
                 
                 <!-- Conférences -->
                 <div class="service-card">
-                    <div class="card-header">
-                        <div class="service-icon">
+                    <div class="service-header">
+                        <div class="service-icon accent">
                             <i class="fas fa-microphone-alt"></i>
                         </div>
+                        <div class="service-meta">
+                            <h3>Conférences & Formations</h3>
+                            <p class="service-subtitle">Expertise partagée</p>
+                        </div>
                     </div>
-                    <h3>Conférences & Formations</h3>
-                    <p>Conférences dynamiques sur la nutrition sportive inclusive, adaptées à votre public et organisation.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Nutrition sportive inclusive</li>
-                        <li><i class="fas fa-check"></i> Bien-être et performance</li>
-                        <li><i class="fas fa-check"></i> Nutrition chez les jeunes</li>
-                        <li><i class="fas fa-check"></i> Formation pour intervenants</li>
-                    </ul>
+                    
+                    <p class="service-description">
+                        Conférences inspirantes sur la nutrition sportive inclusive, adaptées à votre audience et organisation.
+                    </p>
+                    
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Nutrition sportive inclusive</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Performance et bien-être</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Nutrition pédiatrique sportive</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Formation pour professionnels</span>
+                        </div>
+                    </div>
+                    
                     <div class="service-pricing">
-                        <span class="price">Sur demande</span>
-                        <span class="duration">90+ min</span>
+                        <div class="price-main">
+                            <span class="custom-price">Sur mesure</span>
+                        </div>
+                        <div class="price-details">
+                            <span class="duration">90+ minutes</span>
+                        </div>
                     </div>
-                    <a href="#contact" class="btn btn-outline">Demander un devis</a>
+                    
+                    <a href="#contact" class="btn btn-outline btn-service">
+                        <i class="fas fa-envelope"></i>
+                        Devis gratuit
+                    </a>
                 </div>
                 
                 <!-- Suivi -->
                 <div class="service-card">
-                    <div class="card-header">
-                        <div class="service-icon">
+                    <div class="service-header">
+                        <div class="service-icon secondary">
                             <i class="fas fa-chart-line"></i>
                         </div>
+                        <div class="service-meta">
+                            <h3>Suivis & Ajustements</h3>
+                            <p class="service-subtitle">Accompagnement continu</p>
+                        </div>
                     </div>
-                    <h3>Suivis & Ajustements</h3>
-                    <p>Séances de suivi pour ajuster votre plan nutritionnel et maintenir vos objectifs sur le long terme.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Analyse KEENOA</li>
-                        <li><i class="fas fa-check"></i> Ajustements personnalisés</li>
-                        <li><i class="fas fa-check"></i> Suivi des progrès</li>
-                        <li><i class="fas fa-check"></i> Motivation continue</li>
-                    </ul>
+                    
+                    <p class="service-description">
+                        Séances d'ajustement pour maintenir vos objectifs et adapter votre plan nutritionnel à votre évolution.
+                    </p>
+                    
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Analyse détaillée KEENOA</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ajustements personnalisés</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Évaluation des progrès</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Motivation et soutien continu</span>
+                        </div>
+                    </div>
+                    
                     <div class="service-pricing">
-                        <span class="price">95-140$ CAD</span>
-                        <span class="duration">40-60 min</span>
+                        <div class="price-range">
+                            <span class="price-from">$95</span>
+                            <span class="price-separator">-</span>
+                            <span class="price-to">$140</span>
+                            <span class="currency">CAD</span>
+                        </div>
+                        <div class="price-details">
+                            <span class="duration">40-60 minutes</span>
+                        </div>
                     </div>
-                    <a href="#consultation" class="btn btn-outline">Réserver</a>
+                    
+                    <a href="#consultation" class="btn btn-outline btn-service">
+                        <i class="fas fa-calendar-plus"></i>
+                        Planifier
+                    </a>
+                </div>
+                
+            </div>
+            
+            <!-- Section informations complémentaires -->
+            <div class="services-info">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Assurance incluse</h4>
+                        <p>Couverture par la plupart des assurances santé privées et programmes d'aide aux employés.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h4>Consultations virtuelles</h4>
+                        <p>Rencontres en ligne sécurisées pour votre confort et flexibilité, partout au Québec.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>Suivi personnalisé</h4>
+                        <p>Support continu entre les rendez-vous via la plateforme KEENOA et communications directes.</p>
+                    </div>
                 </div>
             </div>
+            
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="blog">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Blog</span>
-                <h2 class="section-title">Derniers articles & conseils</h2>
-                <p class="section-description">
-                    Découvrez mes derniers articles sur la nutrition sportive, les tendances et conseils pratiques
-                </p>
-            </div>
-            
-            <div class="blog-grid">
-                <article class="blog-card featured">
-                    <div class="blog-image">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">Nutrition Sportive</span>
-                            <span class="blog-date">15 Dec 2024</span>
-                        </div>
-                        <h3>Nutrition de Performance : Mythe ou Réalité?</h3>
-                        <p>Une approche scientifique et pratique de la nutrition sportive, basée sur l'expérience terrain et la recherche.</p>
-                        <a href="#" class="read-more">Lire l'article <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-                
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">Bien-être</span>
-                            <span class="blog-date">12 Dec 2024</span>
-                        </div>
-                        <h3>Nutrition Inclusive : Écouter Son Corps</h3>
-                        <p>Comment développer une relation saine avec l'alimentation tout en optimisant ses performances sportives.</p>
-                        <a href="#" class="read-more">Lire l'article <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-                
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">Jeunes Athlètes</span>
-                            <span class="blog-date">10 Dec 2024</span>
-                        </div>
-                        <h3>Nutrition à l'Adolescence : Croissance et Performance</h3>
-                        <p>Conseils spécialisés pour optimiser l'alimentation des jeunes athlètes en période de croissance.</p>
-                        <a href="#" class="read-more">Lire l'article <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-            
-            <div class="blog-cta">
-                <a href="#" class="btn btn-primary">Voir tous les articles</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Instagram Section -->
-    <section id="instagram" class="instagram">
+
+    <!-- ===============================================
+         INSTAGRAM SECTION - @ben.nutritionniste
+         =============================================== -->
+    <section id="instagram" class="instagram-section">
+        <div class="instagram-bg">
+            <div class="gradient-overlay"></div>
+            <div class="animated-shapes"></div>
+        </div>
+        
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Instagram</span>
-                <h2 class="section-title">Suivez-moi sur Instagram</h2>
-                <p class="section-description">
-                    Découvrez mes derniers conseils nutritionnels, recettes et astuces pour optimiser vos performances
-                </p>
-            </div>
             
-            <div class="instagram-grid">
-                <div class="instagram-post">
-                    <div class="post-image">
-                        <i class="fas fa-utensils"></i>
+            <!-- Header avec profil Instagram -->
+            <div class="instagram-header">
+                <div class="profile-preview">
+                    <div class="profile-avatar">
+                        <div class="avatar-ring">
+                            <div class="avatar-placeholder">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="verified-badge">
+                            <i class="fas fa-check"></i>
+                        </div>
                     </div>
-                    <div class="post-content">
-                        <h3>Nutrition pré-entraînement</h3>
-                        <p>Les meilleures stratégies alimentaires avant vos séances...</p>
-                        <div class="post-meta">
-                            <span><i class="far fa-heart"></i> 124</span>
-                            <span><i class="far fa-comment"></i> 15</span>
+                    <div class="profile-info">
+                        <h1 class="profile-name">Ben Nutritionniste</h1>
+                        <p class="profile-handle">@ben.nutritionniste</p>
+                        <div class="profile-category">
+                            <i class="fas fa-leaf"></i>
+                            <span>Nutrition sportive • Conférencier • Expert</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="instagram-post">
-                    <div class="post-image">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <div class="post-content">
-                        <h3>Récupération post-effort</h3>
-                        <p>L'importance de la nutrition dans la récupération musculaire...</p>
-                        <div class="post-meta">
-                            <span><i class="far fa-heart"></i> 89</span>
-                            <span><i class="far fa-comment"></i> 8</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="instagram-post">
-                    <div class="post-image">
-                        <i class="fas fa-apple-alt"></i>
-                    </div>
-                    <div class="post-content">
-                        <h3>Alimentation intuitive</h3>
-                        <p>Comment développer une relation saine avec la nourriture...</p>
-                        <div class="post-meta">
-                            <span><i class="far fa-heart"></i> 156</span>
-                            <span><i class="far fa-comment"></i> 23</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="instagram-post">
-                    <div class="post-image">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <div class="post-content">
-                        <h3>Nutrition de compétition</h3>
-                        <p>Préparez votre stratégie nutritionnelle pour le jour J...</p>
-                        <div class="post-meta">
-                            <span><i class="far fa-heart"></i> 203</span>
-                            <span><i class="far fa-comment"></i> 31</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="instagram-post">
-                    <div class="post-image">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <div class="post-content">
-                        <h3>Supplémentation naturelle</h3>
-                        <p>Les compléments essentiels pour les athlètes...</p>
-                        <div class="post-meta">
-                            <span><i class="far fa-heart"></i> 67</span>
-                            <span><i class="far fa-comment"></i> 12</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="instagram-post">
-                    <div class="post-image">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="post-content">
-                        <h3>Timing nutritionnel</h3>
-                        <p>Quand manger pour maximiser vos performances...</p>
-                        <div class="post-meta">
-                            <span><i class="far fa-heart"></i> 134</span>
-                            <span><i class="far fa-comment"></i> 19</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="instagram-cta">
-                <a href="https://www.instagram.com/ben.nutritionniste/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    <i class="fab fa-instagram"></i>
-                    Suivre @ben.nutritionniste
-                </a>
                 <div class="instagram-stats">
-                    <div class="stat">
-                        <div class="stat-number">2.5K</div>
-                        <div class="stat-label">Abonnés</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">180</div>
-                        <div class="stat-label">Publications</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">95%</div>
-                        <div class="stat-label">Engagement</div>
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="2847">0</div>
+                            <div class="stat-label">Publications</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="12500" data-format="K">0K</div>
+                            <div class="stat-label">Abonnés</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="1250">0</div>
+                            <div class="stat-label">Abonnements</div>
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- Bio et liens -->
+            <div class="instagram-bio">
+                <div class="bio-content">
+                    <h3>🥗 Nutritionniste du sport | 🎤 Conférencier</h3>
+                    <p>Optimise tes performances avec une nutrition adaptée • Science + Pratique • Consultations disponibles ⬇️</p>
+                    <div class="bio-highlights">
+                        <span class="highlight-tag">#NutritionSportive</span>
+                        <span class="highlight-tag">#Performance</span>
+                        <span class="highlight-tag">#Santé</span>
+                    </div>
+                </div>
+                <div class="bio-action">
+                    <a href="https://www.instagram.com/ben.nutritionniste/" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="follow-btn">
+                        <i class="fab fa-instagram"></i>
+                        Suivre
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Stories highlights -->
+            <div class="story-highlights">
+                <div class="highlights-container">
+                    <div class="highlight-item">
+                        <div class="highlight-circle tips">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <span class="highlight-name">Conseils</span>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-circle recipes">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <span class="highlight-name">Recettes</span>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-circle science">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <span class="highlight-name">Science</span>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-circle training">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <span class="highlight-name">Entraînement</span>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-circle qa">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <span class="highlight-name">Q&R</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grille de posts Instagram -->
+            <div class="instagram-feed">
+                <div class="feed-header">
+                    <h3>Publications récentes</h3>
+                    <a href="https://www.instagram.com/ben.nutritionniste/" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="view-all-btn">
+                        Voir tout sur Instagram
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+                <div class="posts-grid">
+                    <!-- Post 1 - Populaire -->
+                    <div class="instagram-post featured" onclick="openInstagram()">
+                        <div class="post-image">
+                            <div class="image-placeholder nutrition">
+                                <i class="fas fa-apple-alt"></i>
+                            </div>
+                            <div class="post-overlay">
+                                <div class="overlay-stats">
+                                    <span class="stat">
+                                        <i class="fas fa-heart"></i>
+                                        1.2K
+                                    </span>
+                                    <span class="stat">
+                                        <i class="fas fa-comment"></i>
+                                        89
+                                    </span>
+                                </div>
+                                <div class="post-type">
+                                    <i class="fas fa-images"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-info">
+                            <span class="post-category">Nutrition</span>
+                            <span class="post-popularity">🔥 Populaire</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Post 2 -->
+                    <div class="instagram-post" onclick="openInstagram()">
+                        <div class="post-image">
+                            <div class="image-placeholder recipe">
+                                <i class="fas fa-cookie-bite"></i>
+                            </div>
+                            <div class="post-overlay">
+                                <div class="overlay-stats">
+                                    <span class="stat">
+                                        <i class="fas fa-heart"></i>
+                                        847
+                                    </span>
+                                    <span class="stat">
+                                        <i class="fas fa-comment"></i>
+                                        43
+                                    </span>
+                                </div>
+                                <div class="post-type">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-info">
+                            <span class="post-category">Recette</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Post 3 -->
+                    <div class="instagram-post" onclick="openInstagram()">
+                        <div class="post-image">
+                            <div class="image-placeholder tips">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="post-overlay">
+                                <div class="overlay-stats">
+                                    <span class="stat">
+                                        <i class="fas fa-heart"></i>
+                                        623
+                                    </span>
+                                    <span class="stat">
+                                        <i class="fas fa-comment"></i>
+                                        27
+                                    </span>
+                                </div>
+                                <div class="post-type">
+                                    <i class="fas fa-quote-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-info">
+                            <span class="post-category">Conseil</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Post 4 -->
+                    <div class="instagram-post" onclick="openInstagram()">
+                        <div class="post-image">
+                            <div class="image-placeholder science">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="post-overlay">
+                                <div class="overlay-stats">
+                                    <span class="stat">
+                                        <i class="fas fa-heart"></i>
+                                        1.1K
+                                    </span>
+                                    <span class="stat">
+                                        <i class="fas fa-comment"></i>
+                                        76
+                                    </span>
+                                </div>
+                                <div class="post-type">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-info">
+                            <span class="post-category">Science</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Post 5 -->
+                    <div class="instagram-post" onclick="openInstagram()">
+                        <div class="post-image">
+                            <div class="image-placeholder training">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <div class="post-overlay">
+                                <div class="overlay-stats">
+                                    <span class="stat">
+                                        <i class="fas fa-heart"></i>
+                                        934
+                                    </span>
+                                    <span class="stat">
+                                        <i class="fas fa-comment"></i>
+                                        52
+                                    </span>
+                                </div>
+                                <div class="post-type">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-info">
+                            <span class="post-category">Training</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Post 6 -->
+                    <div class="instagram-post" onclick="openInstagram()">
+                        <div class="post-image">
+                            <div class="image-placeholder wellness">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="post-overlay">
+                                <div class="overlay-stats">
+                                    <span class="stat">
+                                        <i class="fas fa-heart"></i>
+                                        756
+                                    </span>
+                                    <span class="stat">
+                                        <i class="fas fa-comment"></i>
+                                        31
+                                    </span>
+                                </div>
+                                <div class="post-type">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-info">
+                            <span class="post-category">Bien-être</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA section finale -->
+            <div class="instagram-cta-final">
+                <div class="cta-wrapper">
+                    <div class="cta-icon-wrapper">
+                        <div class="rotating-border">
+                            <div class="cta-main-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+                        <div class="pulse-dots">
+                            <div class="dot dot-1"></div>
+                            <div class="dot dot-2"></div>
+                            <div class="dot dot-3"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-text-content">
+                        <h2>Rejoignez la communauté Instagram !</h2>
+                        <p>Plus de 12K passionnés suivent mes conseils quotidiens en nutrition sportive. Rejoignez-nous pour optimiser vos performances !</p>
+                        
+                        <div class="cta-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Conseils quotidiens personnalisés</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Recettes et astuces exclusives</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Réponses à vos questions en direct</span>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-buttons">
+                            <a href="https://www.instagram.com/ben.nutritionniste/" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="primary-cta-btn">
+                                <div class="btn-content">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Suivre @ben.nutritionniste</span>
+                                </div>
+                                <div class="btn-shine"></div>
+                            </a>
+                            
+                            <button class="secondary-cta-btn" onclick="shareInstagram()">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Partager</span>
+                            </button>
+                        </div>
+                        
+                        <div class="cta-note">
+                            <i class="fas fa-bell"></i>
+                            <span>Activez les notifications pour ne rien manquer !</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </section>
 
@@ -468,188 +1024,444 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- ===============================================
+         CONTACT SECTION - Prenons contact
+         =============================================== -->
+    <section id="contact" class="contact-section">
+        <div class="contact-background">
+            <div class="gradient-mesh"></div>
+            <div class="floating-particles"></div>
+        </div>
+        
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Contact</span>
-                <h2 class="section-title">Restons en contact</h2>
+            
+            <!-- Header section -->
+            <div class="contact-header">
+                <div class="section-badge">
+                    <i class="fas fa-comments"></i>
+                    <span>Contact</span>
+                </div>
+                <h2 class="section-title">
+                    Prenons <span class="highlight-text">contact</span>
+                </h2>
                 <p class="section-description">
-                    Une question? Un projet de conférence? N'hésitez pas à me contacter
+                    Que ce soit pour une consultation personnalisée, une conférence ou simplement échanger sur vos objectifs nutritionnels, je suis là pour vous accompagner.
                 </p>
             </div>
             
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+            <!-- Contact main content -->
+            <div class="contact-main">
+                
+                <!-- Contact methods -->
+                <div class="contact-methods">
+                    
+                    <!-- Primary contact -->
+                    <div class="contact-method primary">
+                        <div class="method-header">
+                            <div class="method-icon">
+                                <i class="fas fa-calendar-check"></i>
+                                <div class="icon-pulse"></div>
+                            </div>
+                            <div class="method-info">
+                                <h3>Réservation directe</h3>
+                                <p>Planifiez votre consultation en quelques clics</p>
+                            </div>
                         </div>
-                        <h3>Téléphone</h3>
-                        <p>+1 581-888-6103</p>
-                        <a href="tel:+15818886103">Appeler maintenant</a>
+                        <div class="method-content">
+                            <p>La façon la plus simple de commencer votre parcours nutritionnel. Choisissez votre créneau et type de consultation.</p>
+                            <a href="#consultation" class="method-btn primary-btn">
+                                <span>Réserver maintenant</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
                     
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+                    <!-- Direct communication -->
+                    <div class="contact-methods-grid">
+                        
+                        <div class="contact-method">
+                            <div class="method-header">
+                                <div class="method-icon phone">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="method-info">
+                                    <h4>Téléphone</h4>
+                                    <p class="method-detail">+1 581-888-6103</p>
+                                </div>
+                            </div>
+                            <div class="method-actions">
+                                <a href="tel:+15818886103" class="quick-action">
+                                    <i class="fas fa-phone"></i>
+                                    <span>Appeler</span>
+                                </a>
+                                <button class="quick-action" onclick="copyToClipboard('+15818886103')">
+                                    <i class="fas fa-copy"></i>
+                                    <span>Copier</span>
+                                </button>
+                            </div>
                         </div>
-                        <h3>Email</h3>
-                        <p>benoit.boulanger.2@ulaval.ca</p>
-                        <a href="mailto:benoit.boulanger.2@ulaval.ca">Envoyer un email</a>
+                        
+                        <div class="contact-method">
+                            <div class="method-header">
+                                <div class="method-icon email">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="method-info">
+                                    <h4>Email</h4>
+                                    <p class="method-detail">benoit.boulanger.2@ulaval.ca</p>
+                                </div>
+                            </div>
+                            <div class="method-actions">
+                                <a href="mailto:benoit.boulanger.2@ulaval.ca" class="quick-action">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Écrire</span>
+                                </a>
+                                <button class="quick-action" onclick="copyToClipboard('benoit.boulanger.2@ulaval.ca')">
+                                    <i class="fas fa-copy"></i>
+                                    <span>Copier</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-header">
+                                <div class="method-icon instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </div>
+                                <div class="method-info">
+                                    <h4>Instagram</h4>
+                                    <p class="method-detail">@ben.nutritionniste</p>
+                                </div>
+                            </div>
+                            <div class="method-actions">
+                                <a href="https://www.instagram.com/ben.nutritionniste/" target="_blank" rel="noopener noreferrer" class="quick-action">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Suivre</span>
+                                </a>
+                                <a href="https://www.instagram.com/ben.nutritionniste/" target="_blank" rel="noopener noreferrer" class="quick-action">
+                                    <i class="fas fa-comment"></i>
+                                    <span>Message</span>
+                                </a>
+                            </div>
+                        </div>
+                        
                     </div>
                     
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                </div>
+                
+                <!-- Contact form -->
+                <div class="contact-form-section">
+                    <div class="form-container">
+                        
+                        <div class="form-header">
+                            <h3>Envoyez-moi un message</h3>
+                            <p>Décrivez votre projet et je vous recontacte rapidement</p>
                         </div>
-                        <h3>Consultations</h3>
-                        <p>En ligne via plateforme sécurisée</p>
-                        <a href="#consultation">Réserver</a>
+                        
+                        <form class="modern-contact-form" id="contact-form">
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <div class="input-container">
+                                        <input type="text" id="firstName" name="firstName" required>
+                                        <label for="firstName">Prénom</label>
+                                        <div class="input-highlight"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-container">
+                                        <input type="text" id="lastName" name="lastName" required>
+                                        <label for="lastName">Nom</label>
+                                        <div class="input-highlight"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <div class="input-container">
+                                        <input type="email" id="email" name="email" required>
+                                        <label for="email">Email</label>
+                                        <div class="input-highlight"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-container">
+                                        <input type="tel" id="phone" name="phone">
+                                        <label for="phone">Téléphone (optionnel)</label>
+                                        <div class="input-highlight"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="select-container">
+                                    <select id="service" name="service" required>
+                                        <option value="" disabled selected></option>
+                                        <option value="consultation">💬 Consultation individuelle</option>
+                                        <option value="performance">🏆 Nutrition de performance</option>
+                                        <option value="conference">🎤 Conférence / Formation</option>
+                                        <option value="suivi">📈 Suivi nutritionnel</option>
+                                        <option value="entreprise">🏢 Services aux entreprises</option>
+                                        <option value="autre">💡 Autre demande</option>
+                                    </select>
+                                    <label for="service">Type de service</label>
+                                    <div class="select-highlight"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="textarea-container">
+                                    <textarea id="message" name="message" rows="4" required></textarea>
+                                    <label for="message">Votre message</label>
+                                    <div class="textarea-highlight"></div>
+                                    <div class="character-counter">
+                                        <span class="current">0</span>
+                                        <span class="max">/500</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-footer">
+                                <div class="privacy-notice">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Vos données sont protégées et ne seront jamais partagées</span>
+                                </div>
+                                
+                                <button type="submit" class="submit-btn">
+                                    <div class="btn-content">
+                                        <span class="btn-text">Envoyer le message</span>
+                                        <i class="fas fa-paper-plane btn-icon"></i>
+                                    </div>
+                                    <div class="btn-loader">
+                                        <div class="spinner"></div>
+                                    </div>
+                                    <div class="btn-success">
+                                        <i class="fas fa-check"></i>
+                                        <span>Envoyé !</span>
+                                    </div>
+                                </button>
+                            </div>
+                            
+                        </form>
+                        
                     </div>
                 </div>
                 
-                <div class="contact-form-container">
-                    <form class="contact-form" id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nom complet</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Téléphone (optionnel)</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service">Service d'intérêt</label>
-                            <select id="service" name="service" required>
-                                <option value="">Sélectionnez un service</option>
-                                <option value="consultation">Consultation individuelle</option>
-                                <option value="performance">Nutrition de performance</option>
-                                <option value="conference">Conférence/Formation</option>
-                                <option value="suivi">Suivi nutritionnel</option>
-                                <option value="autre">Autre</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Décrivez brièvement votre demande ou vos objectifs..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Envoyer le message
-                        </button>
-                    </form>
-                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <i class="fas fa-leaf"></i>
-                        <span>Ben.<strong>Nutritionniste</strong></span>
-                    </div>
-                    <p>Nutrition sportive inclusive et intuitive. Une approche unique d'un athlète professionnel et nutritionniste.</p>
-                    <div class="footer-social">
-                        <a href="https://www.instagram.com/ben.nutritionniste" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/benoitboulanger" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="mailto:benoit.boulanger.2@ulaval.ca" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="tel:+15818886103" aria-label="Téléphone"><i class="fas fa-phone"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Services</h4>
-                        <ul>
-                            <li><a href="#services">Consultations</a></li>
-                            <li><a href="#services">Nutrition de Performance</a></li>
-                            <li><a href="#services">Conférences</a></li>
-                            <li><a href="#services">Suivis</a></li>
-                        </ul>
+            
+            <!-- Contact info footer -->
+            <div class="contact-footer">
+                <div class="footer-content">
+                    <div class="response-time">
+                        <div class="response-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="response-text">
+                            <h4>Temps de réponse</h4>
+                            <p>Je réponds généralement sous 24h</p>
+                        </div>
                     </div>
                     
-                    <div class="footer-column">
-                        <h4>Ressources</h4>
-                        <ul>
-                            <li><a href="#blog">Articles</a></li>
-                            <li><a href="#about">À propos</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            <li><a href="#consultation">Réservation</a></li>
-                        </ul>
+                    <div class="availability">
+                        <div class="availability-icon">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <div class="availability-text">
+                            <h4>Disponibilité</h4>
+                            <p>Consultations en ligne • Flexibilité horaire</p>
+                        </div>
                     </div>
                     
-                    <div class="footer-column">
-                        <h4>Contact</h4>
-                        <ul>
-                            <li><i class="fas fa-phone"></i> +1 581-888-6103</li>
-                            <li><i class="fas fa-envelope"></i> benoit.boulanger.2@ulaval.ca</li>
-                            <li><i class="fas fa-clock"></i> Consultations en ligne</li>
-                        </ul>
+                    <div class="languages">
+                        <div class="languages-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="languages-text">
+                            <h4>Langues</h4>
+                            <p>Français • Anglais</p>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2024 Ben.Nutritionniste - Benoît Boulanger Dt.P. Tous droits réservés.</p>
-                <div class="footer-legal">
-                    <a href="#privacy">Confidentialité</a>
-                    <a href="#terms">Conditions d'utilisation</a>
+        </div>
+    </section>
+
+    <!-- Footer Premium -->
+    <footer class="modern-footer">
+        <div class="footer-bg-particles"></div>
+        <div class="footer-gradient-overlay"></div>
+        
+        <div class="container">
+            <!-- Footer Main Content -->
+            <div class="footer-main">
+                <!-- Brand Section -->
+                <div class="footer-brand-section">
+                    <div class="footer-brand-card">
+                        <div class="footer-logo-modern">
+                            <div class="logo-icon-container">
+                                <i class="fas fa-leaf"></i>
+                                <div class="logo-pulse"></div>
+                            </div>
+                            <div class="logo-text">
+                                <span class="logo-name">Ben.</span>
+                                <span class="logo-title">Nutritionniste</span>
+                            </div>
+                        </div>
+                        
+                        <p class="footer-mission">
+                            Nutrition sportive <strong>inclusive</strong> et <strong>intuitive</strong>.<br>
+                            Une approche unique d'un athlète professionnel et nutritionniste.
+                        </p>
+                        
+                        <!-- Social Media Premium -->
+                        <div class="footer-social-premium">
+                            <h5>Suivez-moi</h5>
+                            <div class="social-premium-grid">
+                                <a href="https://www.instagram.com/ben.nutritionniste" class="social-premium-link instagram" aria-label="Instagram">
+                                    <div class="social-icon-bg">
+                                        <i class="fab fa-instagram"></i>
+                                    </div>
+                                    <div class="social-info">
+                                        <span class="social-platform">Instagram</span>
+                                        <span class="social-handle">@ben.nutritionniste</span>
+                                    </div>
+                                </a>
+                                
+                                <a href="https://www.facebook.com/benoitboulanger" class="social-premium-link facebook" aria-label="Facebook">
+                                    <div class="social-icon-bg">
+                                        <i class="fab fa-facebook"></i>
+                                    </div>
+                                    <div class="social-info">
+                                        <span class="social-platform">Facebook</span>
+                                        <span class="social-handle">Benoît Boulanger</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="footer-navigation">
+                    <div class="footer-nav-column">
+                        <h4 class="footer-column-title">
+                            <i class="fas fa-dumbbell"></i>
+                            Services
+                        </h4>
+                        <ul class="footer-nav-list">
+                            <li><a href="#services" class="footer-nav-link">Consultation individuelle</a></li>
+                            <li><a href="#services" class="footer-nav-link">Nutrition de performance</a></li>
+                            <li><a href="#services" class="footer-nav-link">Conférences & ateliers</a></li>
+                            <li><a href="#services" class="footer-nav-link">Suivi nutritionnel</a></li>
+                            <li><a href="#services" class="footer-nav-link">Plans alimentaires</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-nav-column">
+                        <h4 class="footer-column-title">
+                            <i class="fas fa-compass"></i>
+                            Navigation
+                        </h4>
+                        <ul class="footer-nav-list">
+                            <li><a href="#about" class="footer-nav-link">À propos</a></li>
+                            <li><a href="#services" class="footer-nav-link">Mes services</a></li>
+                            <li><a href="#contact" class="footer-nav-link">Contact</a></li>
+                            <li><a href="#consultation" class="footer-nav-link">Réserver</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Contact Info Premium -->
+                <div class="footer-contact-premium">
+                    <h4 class="footer-column-title">
+                        <i class="fas fa-phone-alt"></i>
+                        Contact Direct
+                    </h4>
+                    
+                    <div class="contact-premium-items">
+                        <div class="contact-premium-item phone">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Téléphone</span>
+                                <a href="tel:+15818886103" class="contact-value">+1 581-888-6103</a>
+                            </div>
+                            <button class="contact-copy-btn" onclick="copyToClipboard('+15818886103')">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="contact-premium-item email">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:benoit.boulanger.2@ulaval.ca" class="contact-value">benoit.boulanger.2@ulaval.ca</a>
+                            </div>
+                            <button class="contact-copy-btn" onclick="copyToClipboard('benoit.boulanger.2@ulaval.ca')">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="contact-premium-item schedule">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Disponibilité</span>
+                                <span class="contact-value">Consultations en ligne</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom Premium -->
+            <div class="footer-bottom-premium">
+                <div class="footer-bottom-content">
+                    <div class="footer-copyright">
+                        <p>&copy; 2025 Ben.Nutritionniste - Benoît Boulanger Dt.P.</p>
+                        <p class="copyright-subtitle">Tous droits réservés.</p>
+                    </div>
+                    
+                    <div class="footer-legal-links">
+                        <a href="#privacy" class="legal-link">
+                            <i class="fas fa-shield-alt"></i>
+                            Confidentialité
+                        </a>
+                        <a href="#terms" class="legal-link">
+                            <i class="fas fa-file-contract"></i>
+                            Conditions d'utilisation
+                        </a>
+                    </div>
+                    
+                    <div class="footer-badge">
+                        <div class="badge-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="badge-text">
+                            <span>Nutritionniste</span>
+                            <span>Professionnel</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-wave">
+                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" opacity="0.25"></path>
+                        <path d="M1200 120L0 64.48 0 0 1200 0 1200 120z" opacity="0.5"></path>
+                        <path d="M1200 120L0 112.48 0 0 1200 0 1200 120z"></path>
+                    </svg>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Consultation Modal -->
-    <div id="consultation" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Réserver une consultation</h2>
-                <span class="close">&times;</span>
-            </div>
-            <div class="modal-body">
-                <p>Pour réserver votre consultation personnalisée, contactez-moi directement :</p>
-                <div class="consultation-options">
-                    <a href="tel:+15818886103" class="consultation-btn">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <strong>Par téléphone</strong>
-                            <span>+1 581-888-6103</span>
-                        </div>
-                    </a>
-                    <a href="mailto:benoit.boulanger.2@ulaval.ca" class="consultation-btn">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <strong>Par email</strong>
-                            <span>benoit.boulanger.2@ulaval.ca</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="consultation-info">
-                    <h3>Informations importantes</h3>
-                    <ul>
-                        <li>Ajustement des tarifs prévu - Janvier 2025</li>
-                        <li>Consultations disponibles en ligne</li>
-                        <li>Première consultation : 60-75 minutes</li>
-                        <li>Guide personnalisé inclus</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
