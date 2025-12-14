@@ -178,7 +178,7 @@
     }
     --primary-color: #2563EB;
     --primary-dark: #1D4ED8;
-    --secondary-color:  #F97316;
+    --secondary-color: #F97316;
     --accent-color: #4ECDC4;
     --success-color: #51CF66;
     --text-dark: #2D3436;
@@ -3999,7 +3999,7 @@ html {
     cursor: pointer;
 }
 .ai-cta-btn.primary {
-    background: linear-gradient(135deg, #F97316 0%, #FDBA74 100%);
+    background: linear-gradient(135deg, #F97316 0%, #4ECDC4 100%);
     color: white;
     box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
 }
