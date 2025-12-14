@@ -1,3 +1,139 @@
+/* ====== Contact Premium Modernisé ====== */
+.contact-premium-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    align-items: stretch;
+}
+
+.contact-premium-card {
+    background: rgba(255,255,255,0.18);
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    min-width: 0;
+    overflow: hidden;
+    backdrop-filter: blur(18px) saturate(1.2);
+    -webkit-backdrop-filter: blur(18px) saturate(1.2);
+    transition: box-shadow 0.2s;
+    color: var(--text-dark);
+}
+.contact-premium-card:hover {
+    box-shadow: 0 12px 40px rgba(0,210,255,0.18), 0 2px 8px rgba(0,0,0,0.10);
+}
+.reservation-card {
+    background: linear-gradient(120deg, rgba(0,210,255,0.10) 0%, rgba(255,107,107,0.10) 100%), rgba(255,255,255,0.18);
+    border: 1.5px solid rgba(0,210,255,0.18);
+}
+.contact-premium-card .cta-btn {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 1.5rem;
+    background: linear-gradient(90deg, #00D2FF 0%, #FF6B6B 100%);
+    color: #fff;
+    padding: 1.1rem 2rem;
+    box-shadow: 0 2px 12px rgba(0,210,255,0.10);
+    border: none;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+.contact-premium-card .cta-btn:hover {
+    background: linear-gradient(90deg, #0099CC 0%, #FF6B6B 100%);
+    box-shadow: 0 4px 24px rgba(0,210,255,0.18);
+}
+.contact-premium-card .cta-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+.contact-premium-card .cta-icon {
+    background: linear-gradient(135deg, #00D2FF 0%, #FF6B6B 100%);
+    color: #fff;
+    border-radius: 50%;
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,210,255,0.10);
+    position: relative;
+}
+.contact-premium-card .cta-text h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    color: var(--text-dark);
+}
+.contact-premium-card .cta-text p {
+    color: rgba(13,23,33,0.95);
+    font-size: 1.05rem;
+    margin-bottom: 0;
+}
+.contact-premium-card .cta-description {
+    color: rgba(13,23,33,0.9);
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+}
+.contact-premium-card .cta-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.contact-premium-card .feature {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: rgba(13,23,33,0.9);
+    font-weight: 500;
+    font-size: 1rem;
+}
+.contact-premium-card .feature i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+.contact-premium-card .privacy-notice {
+    margin-top: 1.2rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+@media (max-width: 900px) {
+    .contact-premium-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .contact-premium-card {
+        padding: 2rem 1.2rem;
+    }
+    /* On small screens restore badge flow */
+    .contact-header .section-badge {
+        position: static;
+        left: auto;
+        top: auto;
+        margin-bottom: 1rem;
+    }
+}
+/* Texte plus clair pour le paragraphe dans la section Instagram CTA */
+.cta-text-content > p {
+    color: #f3f6fa;
+    opacity: 0.92;
+}
 /**
  * Ben Nutritionniste - Main Styles
  * Modern, responsive design for sports nutrition website
@@ -7,6 +143,16 @@
    CSS CUSTOM PROPERTIES (VARIABLES)
    =============================================== */
 :root {
+    /* Sélection de texte plus claire */
+    ::selection {
+        background: #e0f7fa;
+        color: #222;
+    }
+
+    ::-moz-selection {
+        background: #e0f7fa;
+        color: #222;
+    }
     /* Primary Colors */
     --primary-color: #00D2FF;
     --primary-dark: #0099CC;
@@ -715,6 +861,7 @@ html {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: slideInUp 0.8s ease-out 0.6s both;
+    filter: brightness(1.15) contrast(1.2);
 }
 
 .hero-description {
@@ -2518,12 +2665,26 @@ html {
 .contact-header {
     text-align: center;
     margin-bottom: 5rem;
+    position: relative;
 }
 
 .contact-header .section-badge {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 210, 255, 0.2);
+    /* Use same color/gradient as global section badges */
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 28px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 210, 255, 0.3);
+    border: none;
+    /* align badge to the left of the container like other sections */
+    position: absolute;
+    left: 0.5rem;
+    top: 0.2rem;
 }
 
 /* Main content */
@@ -2791,6 +2952,7 @@ html {
     font-size: 1rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     outline: none;
+    color: var(--text-dark);
 }
 
 .input-container input:focus,
@@ -2808,7 +2970,7 @@ html {
     top: 1rem;
     left: 1rem;
     font-size: 1rem;
-    color: #64748b;
+    color: rgba(13,23,33,0.65);
     pointer-events: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background: transparent;
@@ -3535,7 +3697,7 @@ html {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 2.5rem; /* increased horizontal padding */
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: 50px;
     color: white;
@@ -3578,6 +3740,61 @@ html {
     height: 100%;
     fill: var(--primary-color);
     opacity: 0.1;
+}
+
+/* Footer Bottom Grid layout: desktop 3-cols, mobile stacked */
+.footer-bottom-content.footer-bottom-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem 0;
+}
+.footer-bottom-content.footer-bottom-grid .footer-badge {
+    justify-self: start;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.footer-bottom-content.footer-bottom-grid .footer-legal-links {
+    justify-self: center;
+    display: flex;
+    gap: 1rem;
+}
+.footer-bottom-content.footer-bottom-grid .footer-legal-links .legal-link {
+    color: rgba(255,255,255,0.85);
+}
+.footer-bottom-content.footer-bottom-grid .footer-copyright {
+    justify-self: end;
+    text-align: right;
+    color: rgba(255,255,255,0.95);
+}
+.footer-bottom-content.footer-bottom-grid .legal-link:focus {
+    outline: 2px solid rgba(0,210,255,0.18);
+    outline-offset: 2px;
+    border-radius: 4px;
+    padding: 0.12rem 0.25rem;
+}
+
+@media (max-width: 768px) {
+    .footer-bottom-content.footer-bottom-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 0.75rem;
+        padding: 1.25rem 0;
+    }
+    .footer-bottom-content.footer-bottom-grid .footer-badge,
+    .footer-bottom-content.footer-bottom-grid .footer-legal-links,
+    .footer-bottom-content.footer-bottom-grid .footer-copyright {
+        justify-self: center;
+    }
+    .footer-bottom-content.footer-bottom-grid .footer-legal-links {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .footer-bottom-content.footer-bottom-grid .footer-copyright {
+        font-size: 0.95rem;
+    }
 }
 
 @keyframes pulse-border {
@@ -4215,4 +4432,29 @@ html {
     to {
         transform: rotate(360deg);
     }
+}
+
+/* Placeholder color darker for better contrast */
+.input-container input::placeholder,
+.textarea-container textarea::placeholder {
+    color: rgba(13,23,33,0.48);
+}
+
+/* Contact section overlay to improve contrast on light backgrounds */
+.contact-section {
+    position: relative;
+}
+.contact-section .contact-background::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.14), rgba(0,0,0,0.04));
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensure container content is above the overlay */
+.contact-section .container {
+    position: relative;
+    z-index: 1;
 }
