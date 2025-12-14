@@ -2510,8 +2510,6 @@ html {
         transform: rotate(-15deg);
     }
 }
-    transition: var(--transition);
-}
 
 .instagram-handle:hover {
     background: rgba(255, 255, 255, 0.25);
@@ -3233,7 +3231,6 @@ html {
     font-size: 0.9rem;
     opacity: 0.7;
     line-height: 1.4;
-}
     font-size: 1rem;
     transition: var(--transition);
     font-family: inherit;
@@ -3478,9 +3475,7 @@ html {
     gap: 3rem;
 }
 
-.footer-nav-column {
-    /* Style handled by common column styles */
-}
+/* .footer-nav-column styles handled by common column styles */
 
 .footer-column-title {
     display: flex;
@@ -3538,10 +3533,7 @@ html {
     width: 0.5rem;
 }
 
-/* Contact Premium */
-.footer-contact-premium {
-    /* Background handled by general layout */
-}
+/* Contact Premium - Background handled by general layout */
 
 .contact-premium-items {
     display: flex;

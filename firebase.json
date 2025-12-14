@@ -11,7 +11,8 @@
       "deploy.js",
       "debug.bat",
       "configure.bat",
-      "firebase-debug.log"
+      "firebase-debug.log",
+      ".github"
     ],
     "rewrites": [
       {
