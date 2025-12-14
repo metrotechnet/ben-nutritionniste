@@ -1,3 +1,0 @@
-Test de d�ploiement - 2025-12-13 15:45:00
-Section IA pr�sente: OUI
-Version d�ploy�e: 20251213154500

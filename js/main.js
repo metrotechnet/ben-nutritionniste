@@ -603,7 +603,7 @@ function initializeScrollToTop() {
         right: 2rem;
         width: 50px;
         height: 50px;
-        background: linear-gradient(135deg, #00D2FF, #0099CC);
+        background: linear-gradient(135deg, #2563EB, #1D4ED8);
         color: white;
         border: none;
         border-radius: 50%;
@@ -612,7 +612,7 @@ function initializeScrollToTop() {
         visibility: hidden;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1000;
-        box-shadow: 0 4px 20px rgba(0, 210, 255, 0.3);
+        box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
     `;
     
     document.body.appendChild(scrollToTopBtn);
