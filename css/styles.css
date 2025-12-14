@@ -1,9 +1,21 @@
-/* Aligner les boutons des services en bas de leur carte */
-.service-card {
+.service-card { 
+    display: flex; 
+    flex-direction: column; 
+    height: 100%; 
+    max-width: 370px; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+/* Aligne le bloc prix + bouton en bas de la carte service */
+
+.service-bottom {
+    margin-top: auto;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    gap: 1rem;
 }
+
+
 .btn-service {
     margin-top: auto;
     align-self: stretch;
@@ -1502,13 +1514,12 @@ html {
 }
 
 /* Grille des services */
-.services-grid {
+ .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2.5rem;
-    margin: 4rem 0;
-}
-
+    grid-template-columns: 1fr  1fr 1fr;
+    gap: 2rem;
+} 
+   
 .service-card {
     background: white;
     border-radius: 2rem;
@@ -3986,15 +3997,9 @@ html {
         align-items: center;
     }
     
-    /* Services */
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
+
     
-    .service-card {
-        padding: 2rem 1.5rem;
-    }
+
     
     .service-header {
         flex-direction: column;
@@ -4365,10 +4370,7 @@ html {
     .price-main .amount {
         font-size: 1.8rem;
     }
-    
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
+
 }
 
 /* ===============================================
