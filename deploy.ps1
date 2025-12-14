@@ -21,11 +21,17 @@ Write-Host "Checking project status..." -ForegroundColor Yellow
 Write-Host ""
 
 try {
+    # Clear browser cache headers and add timestamp
+    Write-Host "Preparing deployment with cache-busting..." -ForegroundColor Yellow
+    $timestamp = Get-Date -Format "yyyyMMddHHmmss"
+    Write-Host "Deployment timestamp: $timestamp" -ForegroundColor Cyan
+    Write-Host ""
+    
     # Deploy to Firebase
     Write-Host "Starting Firebase deployment..." -ForegroundColor Green
     Write-Host ""
     
-    & firebase deploy --only hosting
+    & firebase deploy --only hosting --force
     
     if ($LASTEXITCODE -eq 0) {
         Write-Host ""
