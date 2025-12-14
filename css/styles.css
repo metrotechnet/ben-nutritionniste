@@ -1,3 +1,13 @@
+/* Aligner les boutons des services en bas de leur carte */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.btn-service {
+    margin-top: auto;
+    align-self: stretch;
+}
 /* Orange gradient for hero consultation button */
 .orange-gradient-btn {
     background: linear-gradient(90deg, #F97316 0%, #FDBA74 100%);
