@@ -31,6 +31,12 @@ try {
     Write-Host "Starting Firebase deployment..." -ForegroundColor Green
     Write-Host ""
     
+    # À exécuter dans le dossier racine de ton projet
+    Remove-Item -Recurse -Force .\public\*
+    Copy-Item -Recurse -Force .\index.html .\public\
+    Copy-Item -Recurse -Force .\css .\public\
+    Copy-Item -Recurse -Force .\js .\public\
+    Copy-Item -Recurse -Force .\assets .\public\
     & firebase deploy --only hosting --force
     
     if ($LASTEXITCODE -eq 0) {

@@ -1,63 +1,17 @@
 {
   "hosting": {
-    "public": ".",
+    "site": "bennutritionniste",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**",
-      "package*.json",
-      "README.md",
-      "deploy*.bat",
-      "deploy.js",
-      "debug.bat",
-      "configure.bat",
-      "firebase-debug.log",
-      ".github"
+      "**/node_modules/**"
     ],
     "rewrites": [
       {
         "source": "**",
         "destination": "/index.html"
       }
-    ],
-    "headers": [
-      {
-        "source": "**/*.@(js|css)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=31536000"
-          }
-        ]
-      },
-      {
-        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|ico)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=31536000"
-          }
-        ]
-      },
-      {
-        "source": "**/*.html",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache, no-store, must-revalidate"
-          },
-          {
-            "key": "Pragma",
-            "value": "no-cache"
-          },
-          {
-            "key": "Expires",
-            "value": "0"
-          }
-        ]
-      }
-    ],
-    "cleanUrls": true,
-    "trailingSlash": false
+    ]
   }
 }
