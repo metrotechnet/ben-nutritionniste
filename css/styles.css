@@ -1,3 +1,39 @@
+/* ===============================================
+   CSS CUSTOM PROPERTIES (VARIABLES)
+   =============================================== */
+:root {
+    ::selection {
+        background: #e0f7fa;
+        color: #222;
+    }
+    ::-moz-selection {
+        background: #e0f7fa;
+        color: #222;
+    }
+    --primary-color: #073caf;
+    --primary-dark: #1D4ED8;
+    --primary-light: #6784d3;
+    --secondary-color: #F97316;
+    --secondary-dark: #C2410C;
+    --secondary-light: #FDBA74;
+    --accent-color: #4ECDC4;
+    --success-color: #51CF66;
+    --text-dark: #2D3436;
+    --text-light: #636E72;
+    --text-muted: #B2BEC3;
+    --bg-white: #FFFFFF;
+    --bg-light: #F8FAFC;
+    --bg-dark: #2D3436;
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --shadow-heavy: 0 10px 40px rgba(0, 0, 0, 0.2);
+    --border-radius: 16px;
+    --border-radius-small: 8px;
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
 .service-card { 
     display: flex; 
     flex-direction: column; 
@@ -17,14 +53,14 @@
     align-self: stretch;
 }
 .orange-gradient-btn {
-    background: linear-gradient(90deg, #F97316 0%, #FDBA74 100%);
+    background: linear-gradient(90deg, var(--secondary-color) 0%, var(--secondary-light) 100%);
     color: #fff !important;
     border: none;
     box-shadow: 0 2px 12px rgba(249,115,22,0.10);
     transition: background 0.2s, box-shadow 0.2s;
 }
 .orange-gradient-btn:hover {
-    background: linear-gradient(90deg, #b45309 0%, #c2410c 100%);
+    background: linear-gradient(90deg, var(--secondary-dark)  0%, var(--secondary-light) 100%);
     transform: translateY(-2px);
     box-shadow: var(--shadow-heavy);
 }
@@ -69,7 +105,7 @@
     font-weight: 600;
     font-size: 1.1rem;
     border-radius: 1.5rem;
-    background: linear-gradient(90deg, #2563EB 0%, #F97316 100%);
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: #fff;
     padding: 1.1rem 2rem;
     box-shadow: 0 2px 12px rgba(37,99,235,0.10);
@@ -77,7 +113,7 @@
     transition: background 0.2s, box-shadow 0.2s;
 }
 .contact-premium-card .cta-btn:hover {
-    background: linear-gradient(90deg, #1D4ED8 0%, #F97316 100%);
+    background: linear-gradient(90deg, var(--primary-dark) 0%, var(--secondary-color) 100%);
     box-shadow: 0 4px 24px rgba(37,99,235,0.18);
 }
 .contact-premium-card .cta-header {
@@ -87,7 +123,7 @@
     margin-bottom: 1.2rem;
 }
 .contact-premium-card .cta-icon {
-    background: linear-gradient(135deg, #2563EB 0%, #F97316 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: #fff;
     border-radius: 50%;
     width: 3.2rem;
@@ -160,43 +196,12 @@
     color: #f3f6fa;
     opacity: 0.92;
 }
+
 /**
  * Ben Nutritionniste - Main Styles
  * Modern, responsive design for sports nutrition website
  */
-/* ===============================================
-   CSS CUSTOM PROPERTIES (VARIABLES)
-   =============================================== */
-:root {
-    ::selection {
-        background: #e0f7fa;
-        color: #222;
-    }
-    ::-moz-selection {
-        background: #e0f7fa;
-        color: #222;
-    }
-    --primary-color: #2563EB;
-    --primary-dark: #1D4ED8;
-    --secondary-color:  #F97316;
-    --accent-color: #4ECDC4;
-    --success-color: #51CF66;
-    --text-dark: #2D3436;
-    --text-light: #636E72;
-    --text-muted: #B2BEC3;
-    --bg-white: #FFFFFF;
-    --bg-light: #F8FAFC;
-    --bg-dark: #2D3436;
-    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
-    --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.15);
-    --shadow-heavy: 0 10px 40px rgba(0, 0, 0, 0.2);
-    --border-radius: 16px;
-    --border-radius-small: 8px;
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
+
 /* ===============================================
    RESET & BASE STYLES
    =============================================== */
@@ -690,7 +695,7 @@ html {
    HERO SECTION - Layout moderne
    =============================================== */
 .hero {
-    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: white;
     position: relative;
     overflow: hidden;
@@ -765,7 +770,7 @@ html {
 }
 .title-line-2 {
     display: block;
-    color: #F97316;
+    color: var(--secondary-color);
     animation: slideInUp 0.8s ease-out 0.6s both;
     filter: brightness(1.15) contrast(1.2);
 }
@@ -879,11 +884,11 @@ html {
     font-size: 1.2rem;
 }
 .contact-phone {
-    background: linear-gradient(135deg, #51CF66, #40C057);
+    background: linear-gradient(135deg, var(--success-color), #40C057);
     color: white;
 }
 .contact-email {
-    background: linear-gradient(135deg, #F97316, #EA580C);
+    background: linear-gradient(135deg, var(--secondary-color), #EA580C);
     color: white;
 }
 .contact-instagram {
@@ -1011,7 +1016,7 @@ html {
    ABOUT SECTION - Design moderne
    =============================================== */
 .about {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
     position: relative;
     overflow: hidden;
     padding: 6rem 0;
@@ -1105,18 +1110,28 @@ html {
     position: relative;
 }
 .timeline-marker {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1rem;
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
     position: relative;
     z-index: 2;
+    padding: 1rem;
+}
+
+.timeline-marker i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 100%;
+    line-height: 1;
 }
 .timeline-content h4 {
     font-size: 1.3rem;
@@ -1301,9 +1316,14 @@ html {
 }
  .services-grid {
     display: grid;
-    grid-template-columns: 1fr  1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
 } 
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr; /* One column on mobile */
+  }
+}
 .service-card {
     background: white;
     border-radius: 2rem;
@@ -1320,7 +1340,7 @@ html {
     border-color: var(--primary-color);
 }
 .premium-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
     border: 2px solid var(--primary-color);
     position: relative;
 }
@@ -1661,7 +1681,7 @@ html {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    background: linear-gradient(45deg, #ffffff, #f0f0f0);
+    background: linear-gradient(45deg, var(--bg-white), #f0f0f0);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1784,7 +1804,7 @@ html {
     background: linear-gradient(45deg, #10b981, #059669);
 }
 .highlight-circle.science {
-    background: linear-gradient(45deg, #3b82f6, #2563eb);
+    background: linear-gradient(45deg, #3b82f6, var(--primary-color));
 }
 .highlight-circle.training {
     background: linear-gradient(45deg, #8b5cf6, #7c3aed);
@@ -1880,7 +1900,7 @@ html {
     background: linear-gradient(45deg, #fbbf24, #f59e0b);
 }
 .image-placeholder.science {
-    background: linear-gradient(45deg, #3b82f6, #2563eb);
+    background: linear-gradient(45deg, #3b82f6, var(--primary-color));
 }
 .image-placeholder.training {
     background: linear-gradient(45deg, #8b5cf6, #7c3aed);
@@ -2243,7 +2263,7 @@ html {
    CONTACT SECTION - MODERN REDESIGN
    =============================================== */
 .contact-section {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    background: linear-gradient(135deg, var(--bg-light) 0%, #e2e8f0 100%);
     position: relative;
     overflow: hidden;
     padding: 8rem 0;
@@ -2401,7 +2421,7 @@ html {
     color: white;
 }
 .method-icon.email {
-    background: linear-gradient(45deg, #3b82f6, #2563eb);
+    background: linear-gradient(45deg, #3b82f6, var(--primary-color));
     color: white;
 }
 .method-icon.instagram {
@@ -2780,7 +2800,7 @@ html {
     background: linear-gradient(45deg, #10b981, #059669);
 }
 .languages-icon {
-    background: linear-gradient(45deg, #3b82f6, #2563eb);
+    background: linear-gradient(45deg, #3b82f6, var(--primary-color));
 }
 .response-text h4,
 .availability-text h4,
@@ -3088,7 +3108,7 @@ html {
     background: linear-gradient(135deg, #10b981, #059669);
 }
 .email .contact-icon {
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    background: linear-gradient(135deg, #3b82f6, var(--primary-dark));
 }
 .schedule .contact-icon {
     background: linear-gradient(135deg, #f59e0b, #d97706);
@@ -3792,7 +3812,7 @@ html {
 .ai-agent-section {
     position: relative;
     padding: 5rem 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
     overflow: hidden;
     color: white;
 }
@@ -3866,7 +3886,7 @@ html {
     position: relative;
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -3999,7 +4019,7 @@ html {
     cursor: pointer;
 }
 .ai-cta-btn.primary {
-    background: linear-gradient(135deg, #F97316 0%, #FDBA74 100%);
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-light) 100%);
     color: white;
     box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
 }
