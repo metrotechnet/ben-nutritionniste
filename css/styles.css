@@ -1,3 +1,4 @@
+
 /* ===============================================
    CSS CUSTOM PROPERTIES (VARIABLES)
    =============================================== */
@@ -10,16 +11,16 @@
         background: #e0f7fa;
         color: #222;
     }
-    --primary-color: #073caf;
-    --primary-dark: #1D4ED8;
-    --primary-light: #6784d3;
-    --secondary-color: #F97316;
-    --secondary-dark: #C2410C;
-    --secondary-light: #FDBA74;
+    --primary-color: #095b82;
+    --primary-dark: #06405b;
+    --primary-light: #b5ceda;
+    --secondary-color: #adc184;
+    --secondary-dark: #5b8209;
+    --secondary-light: #cedab5;
     --accent-color: #4ECDC4;
     --success-color: #51CF66;
     --text-dark: #2D3436;
-    --text-light: #636E72;
+    --text-light: #e7edf0;
     --text-muted: #B2BEC3;
     --bg-white: #FFFFFF;
     --bg-light: #F8FAFC;
@@ -105,7 +106,7 @@
     font-weight: 600;
     font-size: 1.1rem;
     border-radius: 1.5rem;
-    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(90deg, var(--secondary-color) 0%, var(--secondary-light) 100%);
     color: #fff;
     padding: 1.1rem 2rem;
     box-shadow: 0 2px 12px rgba(37,99,235,0.10);
@@ -2588,6 +2589,8 @@ html {
     position: absolute;
     top: 1rem;
     left: 1rem;
+    border-radius: 4px; /* Ajuste la valeur selon l’arrondi désiré */
+
     font-size: 1rem;
     color: rgba(13,23,33,0.65);
     pointer-events: none;
@@ -2659,7 +2662,7 @@ html {
 }
 .submit-btn {
     position: relative;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
     color: white;
     border: none;
     padding: 1.2rem 3rem;
@@ -2833,76 +2836,55 @@ html {
 /* ===============================================
    FOOTER PREMIUM
    =============================================== */
+/* Footer background to match hero section */
+
 .modern-footer {
     position: relative;
-    background: linear-gradient(135deg, 
-        #1a1a2e 0%,
-        #16213e 25%,
-        #0f3460 50%,
-        #533483 75%,
-        #7209b7 100%);
-    color: white;
-    padding: 5rem 0 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    padding: 1rem 0 0;
     overflow: hidden;
 }
-.footer-bg-particles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 60% 70%, rgba(0, 210, 255, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 80% 40%, rgba(109, 40, 217, 0.1) 1px, transparent 1px);
-    background-size: 100px 100px, 150px 150px, 80px 80px;
-    animation: particle-float 20s linear infinite;
+/* === Footer custom columns and copyright bar (2025 refonte) === */
+.footer-copyright-bar {
+    color: var(--text-light) !important;
+    background: transparent;
+    font-size: 1.08rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
 }
-.footer-gradient-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(ellipse at top, rgba(109, 40, 217, 0.1), transparent),
-        radial-gradient(ellipse at bottom, rgba(0, 210, 255, 0.05), transparent);
-    pointer-events: none;
+.footer-columns {
+    color: var(--text-light);
 }
-.footer-main {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 4rem;
-    margin-bottom: 4rem;
+.footer-col {
+    min-width: 180px;
 }
-.footer-brand-section {
-    padding-right: 2rem;
-}
-.footer-brand-card {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    padding: 2.5rem;
-    box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    transition: var(--transition);
-}
-.footer-brand-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
-}
-.footer-logo-modern {
+.footer-col-title {
+    color: var(--secondary-color);
+    font-size: 1.08rem;
+    font-weight: 600;
+    margin-bottom: 1.1rem;
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    gap: 0.7rem;
 }
+.footer-col-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-col-list li {
+    margin-bottom: 0.7rem;
+}
+.footer-col-list a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.97rem;
+    transition: color 0.2s;
+}
+.footer-col-list a:hover {
+    color: var(--primary-color, #073caf);
+}
+
 .logo-icon-container {
     position: relative;
     width: 60px;
