@@ -37,7 +37,7 @@ try {
     Copy-Item -Recurse -Force .\css .\public\
     Copy-Item -Recurse -Force .\js .\public\
     Copy-Item -Recurse -Force .\assets .\public\
-    & firebase deploy --only hosting --force
+    firebase deploy --only hosting --force
     
     if ($LASTEXITCODE -eq 0) {
         Write-Host ""
