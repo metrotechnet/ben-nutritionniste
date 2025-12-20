@@ -1,4 +1,5 @@
 
+
 /* ===============================================
    CSS CUSTOM PROPERTIES (VARIABLES)
    =============================================== */
@@ -19,9 +20,10 @@
     --secondary-light: #f5b078;
     --accent-color: #4ECDC4;
     --success-color: #51CF66;
-    --text-dark: #2D3436;
-    --text-light: #8a8b8b;
-    --text-muted: #B2BEC3;
+    --text-dark: #0a0c0c;
+    --text-light: #5b5c5c;
+    --text-lighter: #949494;
+    --text-muted: #000000;
     --bg-white: #FFFFFF;
     --bg-light: #F8FAFC;
     --bg-dark: #2D3436;
@@ -35,24 +37,6 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.service-card { 
-    display: flex; 
-    flex-direction: column; 
-    height: 100%; 
-    max-width: 370px; 
-    margin-left: auto; 
-    margin-right: auto; 
-}
-.service-bottom {
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-.btn-service {
-    margin-top: auto;
-    align-self: stretch;
-}
 .orange-gradient-btn {
     background: linear-gradient(90deg, var(--secondary-color) 0%, var(--secondary-light) 100%);
     color: #fff !important;
@@ -61,143 +45,10 @@
     transition: background 0.2s, box-shadow 0.2s;
 }
 .orange-gradient-btn:hover {
-    background: linear-gradient(90deg, var(--secondary-dark)  0%, var(--secondary-light) 100%);
+    background: linear-gradient(90deg, var(--primary-color)  0%, var(--secondary-light) 100%);
     transform: translateY(-2px);
     box-shadow: var(--shadow-heavy);
 }
-.contact-premium-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    align-items: stretch;
-}
-.contact-premium-card {
-    background: rgba(255,255,255,0.18);
-    border-radius: 2rem;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-    padding: 2.5rem 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    border: 1.5px solid rgba(255,255,255,0.25);
-    min-width: 0;
-    overflow: hidden;
-    backdrop-filter: blur(18px) saturate(1.2);
-    -webkit-backdrop-filter: blur(18px) saturate(1.2);
-    transition: box-shadow 0.2s;
-    color: var(--text-dark);
-}
-.contact-premium-card:hover {
-    box-shadow: 0 12px 40px rgba(37,99,235,0.18), 0 2px 8px rgba(0,0,0,0.10);
-}
-.reservation-card {
-    background: linear-gradient(120deg, rgba(37,99,235,0.10) 0%, rgba(249,115,22,0.10) 100%), rgba(255,255,255,0.18);
-    border: 1.5px solid rgba(37,99,235,0.18);
-}
-.contact-premium-card .cta-btn {
-    margin-top: 2rem;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 1.1rem;
-    border-radius: 1.5rem;
-    background: linear-gradient(90deg, var(--secondary-color) 0%, var(--secondary-light) 100%);
-    color: #fff;
-    padding: 1.1rem 2rem;
-    box-shadow: 0 2px 12px rgba(37,99,235,0.10);
-    border: none;
-    transition: background 0.2s, box-shadow 0.2s;
-}
-.contact-premium-card .cta-btn:hover {
-    background: linear-gradient(90deg, var(--primary-dark) 0%, var(--secondary-color) 100%);
-    box-shadow: 0 4px 24px rgba(37,99,235,0.18);
-}
-.contact-premium-card .cta-header {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    margin-bottom: 1.2rem;
-}
-.contact-premium-card .cta-icon {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: #fff;
-    border-radius: 50%;
-    width: 3.2rem;
-    height: 3.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    box-shadow: 0 2px 12px rgba(37,99,235,0.10);
-    position: relative;
-}
-.contact-premium-card .cta-text h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 0.2rem;
-    color: var(--text-dark);
-}
-.contact-premium-card .cta-text p {
-    color: rgba(13,23,33,0.95);
-    font-size: 1.05rem;
-    margin-bottom: 0;
-}
-.contact-premium-card .cta-description {
-    color: rgba(13,23,33,0.9);
-    font-size: 1.05rem;
-    margin-bottom: 1.2rem;
-}
-.contact-premium-card .cta-features {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-.contact-premium-card .feature {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    color: rgba(13,23,33,0.9);
-    font-weight: 500;
-    font-size: 1rem;
-}
-.contact-premium-card .feature i {
-    color: var(--primary-color);
-    font-size: 1.1rem;
-}
-.contact-premium-card .privacy-notice {
-    margin-top: 1.2rem;
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-@media (max-width: 900px) {
-    .contact-premium-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    .contact-premium-card {
-        padding: 2rem 1.2rem;
-    }
-    .contact-header .section-badge {
-        position: static;
-        left: auto;
-        top: auto;
-        margin-bottom: 1rem;
-    }
-}
-.cta-text-content > p {
-    color: #f3f6fa;
-    opacity: 0.92;
-}
-
 /**
  * Ben Nutritionniste - Main Styles
  * Modern, responsive design for sports nutrition website
@@ -303,6 +154,7 @@ img {
     color: white;
     transform: translateY(-2px);
 }
+
 /* ===============================================
    NAVIGATION MODERNE
    =============================================== */
@@ -352,7 +204,8 @@ img {
     position: relative;
     width: 45px;
     height: 45px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -500,7 +353,7 @@ img {
     align-items: center;
     gap: 0.6rem;
     padding: 0.8rem 1.5rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
     color: white;
     text-decoration: none;
     border-radius: 25px;
@@ -515,7 +368,8 @@ img {
 .consultation-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-light));
+   color: white;
 }
 .btn-text {
     position: relative;
@@ -692,6 +546,7 @@ html {
         opacity: 0.7;
     }
 }
+
 /* ===============================================
    HERO SECTION - Layout moderne
    =============================================== */
@@ -811,95 +666,8 @@ html {
     align-items: flex-start;
     padding-top: 3rem;
 }
-.profile-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 2rem;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-    animation: slideInRight 0.8s ease-out 0.6s both;
-    width: 100%;
-    max-width: 320px;
-}
-.profile-image {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 1.5rem;
-}
-.profile-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.3);
-}
-.profile-badge {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: var(--success-color);
-    color: white;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid white;
-    font-size: 0.8rem;
-}
-.profile-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-.profile-title {
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-.profile-location {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 2rem;
-}
-.profile-actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-.contact-btn {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-    font-size: 1.2rem;
-}
-.contact-phone {
-    background: linear-gradient(135deg, var(--success-color), #40C057);
-    color: white;
-}
-.contact-email {
-    background: linear-gradient(135deg, var(--secondary-color), #EA580C);
-    color: white;
-}
-.contact-instagram {
-    background: linear-gradient(135deg, #E1306C, #C13584);
-    color: white;
-}
-.contact-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
+
+
 .hero-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1012,6 +780,213 @@ html {
     color: rgba(255, 255, 255, 0.8);
     font-weight: 500;
     margin-top: 0.5rem;
+}
+
+/* ===============================================
+   PROFILE SECTION - Layout moderne
+   =============================================== */
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 2rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    animation: slideInRight 0.8s ease-out 0.6s both;
+    width: 100%;
+    max-width: 320px;
+}
+.profile-image {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+}
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+}
+.profile-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--success-color);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid white;
+    font-size: 0.8rem;
+}
+.profile-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.profile-title {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.profile-location {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+.profile-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+
+
+/* ===============================================
+   CONTACT PREMIUM SECTION - Layout moderne
+   =============================================== */
+
+.contact-premium-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    align-items: stretch;
+}
+.contact-premium-card {
+    background: rgba(255,255,255,0.18);
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    min-width: 0;
+    overflow: hidden;
+    backdrop-filter: blur(18px) saturate(1.2);
+    -webkit-backdrop-filter: blur(18px) saturate(1.2);
+    transition: box-shadow 0.2s;
+    color: var(--text-dark);
+}
+.contact-premium-card:hover {
+    box-shadow: 0 12px 40px rgba(37,99,235,0.18), 0 2px 8px rgba(0,0,0,0.10);
+}
+.reservation-card {
+    background: linear-gradient(120deg, rgba(37,99,235,0.10) 0%, rgba(249,115,22,0.10) 100%), rgba(255,255,255,0.18);
+    border: 1.5px solid rgba(37,99,235,0.18);
+}
+.contact-premium-card .cta-btn {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 1.5rem;
+    background: linear-gradient(90deg, var(--secondary-color) 0%, var(--secondary-light) 100%);
+    color: #fff;
+    padding: 1.1rem 2rem;
+    box-shadow: 0 2px 12px rgba(37,99,235,0.10);
+    border: none;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+.contact-premium-card .cta-btn:hover {
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-light) 100%);
+    box-shadow: 0 4px 24px rgba(37,99,235,0.18);
+}
+.contact-premium-card .cta-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+.contact-premium-card .cta-icon {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-light) 100%);
+    color: #fff;
+    border-radius: 50%;
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 12px rgba(37,99,235,0.10);
+    position: relative;
+}
+.contact-premium-card .cta-text h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    color: var(--text-dark);
+}
+.contact-premium-card .cta-text p {
+    color: rgba(13,23,33,0.95);
+    font-size: 1.05rem;
+    margin-bottom: 0;
+}
+.contact-premium-card .cta-description {
+    color: rgba(13,23,33,0.9);
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+}
+.contact-premium-card .cta-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.contact-premium-card .feature {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: rgba(13,23,33,0.9);
+    font-weight: 500;
+    font-size: 1rem;
+}
+.contact-premium-card .feature i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+.contact-premium-card .privacy-notice {
+    margin-top: 1.2rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+@media (max-width: 900px) {
+    .contact-premium-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .contact-premium-card {
+        padding: 2rem 1.2rem;
+    }
+    .contact-header .section-badge {
+        position: static;
+        left: auto;
+        top: auto;
+        margin-bottom: 1rem;
+    }
+}
+.cta-text-content > p {
+    color: #f3f6fa;
+    opacity: 0.92;
 }
 /* ===============================================
    ABOUT SECTION - Design moderne
@@ -1287,6 +1262,8 @@ html {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.6);
 }
+
+
 /* ===============================================
    SERVICES SECTION - Design premium
    =============================================== */
@@ -1320,10 +1297,14 @@ html {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
 } 
-@media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: 1fr; /* One column on mobile */
-  }
+
+.service-card { 
+    display: flex; 
+    flex-direction: column; 
+    height: 100%; 
+    max-width: 370px; 
+    margin-left: auto; 
+    margin-right: auto; 
 }
 .service-card {
     background: white;
@@ -1340,6 +1321,23 @@ html {
     box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
     border-color: var(--primary-color);
 }
+.service-bottom {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.btn-service {
+    margin-top: auto;
+    align-self: stretch;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr; /* One column on mobile */
+  }
+}
+
 .premium-card {
     background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
     border: 2px solid var(--primary-color);
@@ -1515,6 +1513,7 @@ html {
     color: var(--text-light);
     line-height: 1.6;
 }
+
 /* ===============================================
    INSTAGRAM SECTION - @ben.nutritionniste
    =============================================== */
@@ -2119,16 +2118,18 @@ html {
     gap: 1.5rem;
     align-items: center;
     margin-bottom: 1.5rem;
+    justify-content: center;
+
 }
 .primary-cta-btn {
     position: relative;
+    width:auto;
     background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
     color: white;
-    padding: 1.2rem 2.5rem;
+    padding: 1rem 1.5rem;
     border-radius: 30px;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     transition: var(--transition);
     overflow: hidden;
     border: none;
@@ -2137,28 +2138,14 @@ html {
     align-items: center;
 }
 .primary-cta-btn:hover {
+    background: linear-gradient(45deg, #fcb045, #fd1d1d, #833ab4);
+    
     transform: translateY(-3px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     color: white;
 }
-.btn-content {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    position: relative;
-    z-index: 2;
-}
-.btn-shine {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: var(--transition);
-}
-.primary-cta-btn:hover .btn-shine {
-    left: 100%;
+.primary-cta-btn i {
+    padding-right: 0.7em;
 }
 .secondary-cta-btn {
     background: rgba(255, 255, 255, 0.1);
@@ -2179,6 +2166,26 @@ html {
     border-color: rgba(255, 255, 255, 0.5);
     transform: translateY(-2px);
 }
+.btn-content {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    position: relative;
+    z-index: 2;
+}
+.btn-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: var(--transition);
+}
+.primary-cta-btn:hover .btn-shine {
+    left: 100%;
+}
+
 .cta-note {
     display: flex;
     align-items: center;
@@ -2394,6 +2401,33 @@ html {
     color: white;
     border: none;
 }
+
+.contact-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    font-size: 1.2rem;
+}
+.contact-phone {
+    background: linear-gradient(135deg, var(--success-color), #40C057);
+    color: white;
+}
+.contact-email {
+    background: linear-gradient(135deg, var(--secondary-color), #EA580C);
+    color: white;
+}
+.contact-instagram {
+    background: linear-gradient(135deg, #E1306C, #C13584);
+    color: white;
+}
+.contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
 .method-header {
     display: flex;
     align-items: flex-start;
@@ -2544,6 +2578,8 @@ html {
 .form-header p {
     opacity: 0.7;
     font-size: 1.1rem;
+    color: var(--text-dark);
+
 }
 .modern-contact-form {
     display: flex;
@@ -2649,17 +2685,7 @@ html {
     align-items: center;
     margin-top: 1rem;
 }
-.privacy-notice {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    font-size: 0.9rem;
-    color: #64748b;
-    text-align: center;
-}
-.privacy-notice i {
-    color: #10b981;
-}
+
 .submit-btn {
     position: relative;
     background: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
@@ -2675,6 +2701,8 @@ html {
     min-width: 200px;
 }
 .submit-btn:hover {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-light));
+
     transform: translateY(-3px);
     box-shadow: 0 15px 35px rgba(0, 210, 255, 0.4);
 }
@@ -2833,6 +2861,7 @@ html {
     resize: vertical;
     min-height: 120px;
 }
+
 /* ===============================================
    FOOTER PREMIUM
    =============================================== */
@@ -2846,15 +2875,30 @@ html {
 }
 /* === Footer custom columns and copyright bar (2025 refonte) === */
 .footer-copyright-bar {
-    color: var(--text-light) !important;
+    color: var(--text-lighter) !important;
     background: transparent;
     font-size: 1.08rem;
     font-weight: 500;
     letter-spacing: 0.01em;
+    width:100%;
+    text-align:center;
+    padding:1.2rem 0 0.7rem 0;
+    background:transparent;
+    font-size:1.1rem; 
+    font-weight:500; 
+    letter-spacing:0.01em;
 }
 .footer-columns {
-    color: var(--text-light);
+    color: var(--text-lighter);
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:2.5rem;
+    padding:2.5rem 0 1.5rem 0;
+    max-width:1200px;
+    margin:0 auto;
 }
+
 .footer-col {
     min-width: 180px;
 }
@@ -2876,7 +2920,7 @@ html {
     margin-bottom: 0.7rem;
 }
 .footer-col-list a {
-    color: var(--text-light);
+    color: var(--text-lighter);
     text-decoration: none;
     font-size: 0.97rem;
     transition: color 0.2s;
@@ -3582,7 +3626,7 @@ html {
         flex-direction: column;
         gap: 1rem;
     }
-    .primary-cta-btn,
+    
     .secondary-cta-btn {
         width: 100%;
         justify-content: center;
@@ -3788,6 +3832,7 @@ html {
     position: relative;
     z-index: 1;
 }
+
 /* ===============================================
    AI AGENT SECTION - Assistant IA Styles
    =============================================== */
@@ -4006,18 +4051,11 @@ html {
     box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
 }
 .ai-cta-btn.primary:hover {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-light) 100%);
     transform: translateY(-3px);
     box-shadow: 0 15px 40px rgba(249, 115, 22, 0.4);
 }
-.ai-cta-btn.secondary {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-.ai-cta-btn.secondary:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-}
+
 .btn-glow {
     position: absolute;
     inset: 0;
@@ -4123,7 +4161,10 @@ html {
         gap: 1.5rem;
     }
 }
-/* === Podcast Section Styles === */
+
+/* ===============================================
+   PODCAST SECTION - Podcast Styles
+   =============================================== */
 .podcast-section {
     background: var(--bg-light, #f5f7fa);
     padding: 4.5rem 0 3.5rem 0;
@@ -4219,3 +4260,10 @@ html {
         font-size: 1rem;
     }
 }
+
+
+
+
+
+
+
