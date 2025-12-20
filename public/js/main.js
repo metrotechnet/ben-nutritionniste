@@ -720,7 +720,6 @@ function getScrollPosition() {
 // Optimize scroll events
 const optimizedScrollHandler = throttle(function() {
     updateActiveNavLink();
-    updateNavbarBackground();
 }, 16); // ~60fps
 
 window.addEventListener('scroll', optimizedScrollHandler);
