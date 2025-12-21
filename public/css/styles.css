@@ -2006,7 +2006,8 @@ html {
     grid-template-columns: auto 1fr;
     gap: 4rem;
     align-items: center;
-    padding: 4rem;
+    padding: 2rem;
+    margin: 2rem;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(20px);
     border-radius: 32px;
@@ -2153,8 +2154,8 @@ html {
     width:auto;
     background: linear-gradient(45deg, var(--secondary-color), var(--secondary-light));
     color: white;
-    padding: 1rem 1.5rem;
-    border-radius: 30px;
+    padding: 1rem 2rem;
+    border-radius: 25px;
     text-decoration: none;
     font-size: 1.1rem;
     transition: var(--transition);
@@ -2180,13 +2181,11 @@ html {
     border: 2px solid rgba(255, 255, 255, 0.3);
     padding: 1rem 2rem;
     border-radius: 25px;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: var(--transition);
     display: flex;
     align-items: center;
-    gap: 0.6rem;
 }
 .secondary-cta-btn:hover {
     background: rgba(255, 255, 255, 0.2);
