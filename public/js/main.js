@@ -1,3 +1,29 @@
+// Chargement dynamique des podcasts
+document.addEventListener('DOMContentLoaded', function () {
+    const podcastList = document.getElementById('podcast-grid');
+    if (podcastList) {
+        fetch('assets/podcasts.json')
+            .then(res => res.json())
+            .then(data => {
+                podcastList.innerHTML = data.map(podcast => `
+                    <div class="podcast-card">
+                        <a href="${podcast.url}" target="_blank" rel="noopener noreferrer">
+                            <img src="${podcast.img}" alt="${podcast.alt}">
+                            <div class="podcast-info">
+                                <h4>${podcast.title}</h4>
+                                <span>${podcast.platform}</span>
+                            </div>
+                        </a>
+                    </div>
+                `).join('');
+            })
+            .catch(() => {
+                podcastList.innerHTML = '<p>Impossible de charger les podcasts pour le moment.</p>';
+            });
+    }
+});
+
+
 /**
  * Ben Nutritionniste - Interactive JavaScript
  * Modern functionality for sports nutrition website
@@ -395,16 +421,8 @@ function animateMetricCounter(element) {
 // CONTACT FORM
 // ===============================================
 function initializeContactForm() {
-    const contactForm = document.getElementById('contact-form');
     const messageTextarea = document.querySelector('#message');
     const characterCounter = document.querySelector('.character-counter .current');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            handleModernFormSubmission(this);
-        });
-    }
     
     // Character counter for textarea
     if (messageTextarea && characterCounter) {
@@ -436,58 +454,7 @@ function initializeContactForm() {
     });
 }
 
-function handleModernFormSubmission(form) {
-    const submitBtn = form.querySelector('.submit-btn');
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
-    
-    // Validate form
-    if (validateModernForm(data)) {
-        // Show loading state
-        submitBtn.classList.add('loading');
-        submitBtn.disabled = true;
-        
-        // Simulate form submission (replace with actual API call)
-        setTimeout(() => {
-            submitBtn.classList.remove('loading');
-            submitBtn.classList.add('success');
-            
-            // Reset form after success
-            setTimeout(() => {
-                form.reset();
-                submitBtn.classList.remove('success');
-                submitBtn.disabled = false;
-                
-                // Reset character counter
-                const counter = document.querySelector('.character-counter .current');
-                if (counter) {
-                    counter.textContent = '0';
-                    counter.style.color = 'var(--primary-color)';
-                }
-            }, 2000);
-        }, 2500);
-    } else {
-        // Show validation errors
-        showModernFormErrors(form);
-    }
-}
 
-function validateModernForm(data) {
-    const required = ['firstName', 'lastName', 'email', 'service', 'message'];
-    return required.every(field => data[field] && data[field].trim() !== '');
-}
-
-function showModernFormErrors(form) {
-    const requiredFields = form.querySelectorAll('[required]');
-    requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-            field.style.borderColor = '#ef4444';
-            field.addEventListener('input', function() {
-                this.style.borderColor = '#e2e8f0';
-            }, { once: true });
-        }
-    });
-}
 
 // Copy to clipboard function
 function copyToClipboard(text) {

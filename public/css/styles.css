@@ -1,5 +1,4 @@
 
-
 /* ===============================================
    CSS CUSTOM PROPERTIES (VARIABLES)
    =============================================== */
@@ -856,18 +855,18 @@ html {
    =============================================== */
 
 .contact-premium-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
     margin-top: 3rem;
     margin-bottom: 3rem;
-    align-items: stretch;
+    width: 100%;
 }
 .contact-premium-card {
     background: rgba(255,255,255,0.18);
     border-radius: 2rem;
     box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-    padding: 2.5rem 2rem;
+    padding: 2.5rem 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -879,6 +878,8 @@ html {
     -webkit-backdrop-filter: blur(18px) saturate(1.2);
     transition: box-shadow 0.2s;
     color: var(--text-dark);
+    max-width: 950px;
+    width: 100%;
 }
 .contact-premium-card:hover {
     box-shadow: 0 12px 40px rgba(37,99,235,0.18), 0 2px 8px rgba(0,0,0,0.10);
@@ -970,11 +971,12 @@ html {
 }
 @media (max-width: 900px) {
     .contact-premium-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 2rem;
     }
     .contact-premium-card {
         padding: 2rem 1.2rem;
+        max-width: 100%;
     }
     .contact-header .section-badge {
         position: static;
@@ -987,6 +989,40 @@ html {
     color: #f3f6fa;
     opacity: 0.92;
 }
+/* ===== Contact Section Responsive Buttons ===== */
+@media (min-width: 700px) {
+    .contact-buttons-responsive {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 2rem !important;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2.2rem;
+    }
+    .contact-btn-responsive {
+        width: auto !important;
+        min-width: 220px;
+        max-width: 320px;
+        margin: 0 !important;
+    }
+}
+@media (max-width: 699px) {
+    .contact-buttons-responsive {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.2rem !important;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1.5rem;
+    }
+    .contact-btn-responsive {
+        width: 100% !important;
+        max-width: 340px;
+        margin: 0 auto !important;
+    }
+}
+
+
 /* ===============================================
    ABOUT SECTION - Design moderne
    =============================================== */
@@ -2692,7 +2728,7 @@ html {
     min-width: 200px;
 }
 .submit-btn:hover {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-light));
+    background: linear-gradient(135deg, var(--secondary-light), var(--secondary-color));
 
     transform: translateY(-3px);
     box-shadow: 0 15px 35px rgba(0, 210, 255, 0.4);
