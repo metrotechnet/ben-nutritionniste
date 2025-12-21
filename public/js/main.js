@@ -1,27 +1,4 @@
-// Chargement dynamique des podcasts
-document.addEventListener('DOMContentLoaded', function () {
-    const podcastList = document.getElementById('podcast-grid');
-    if (podcastList) {
-        fetch('assets/podcasts.json')
-            .then(res => res.json())
-            .then(data => {
-                podcastList.innerHTML = data.map(podcast => `
-                    <div class="podcast-card">
-                        <a href="${podcast.url}" target="_blank" rel="noopener noreferrer">
-                            <img src="${podcast.img}" alt="${podcast.alt}">
-                            <div class="podcast-info">
-                                <h4>${podcast.title}</h4>
-                                <span>${podcast.platform}</span>
-                            </div>
-                        </a>
-                    </div>
-                `).join('');
-            })
-            .catch(() => {
-                podcastList.innerHTML = '<p>Impossible de charger les podcasts pour le moment.</p>';
-            });
-    }
-});
+
 
 
 /**
@@ -36,12 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
     initializeScrollAnimations();
     initializeInstagramSection();
-    initializeContactForm();
     initializeScrollToTop();
     initializeStatsAnimation();
     initializeSkillBars();
     initializeInstagramMetrics();
-    initializeFooterAnimations();
+    initializePodcastSection();
 });
 
 // ===============================================
@@ -417,42 +393,6 @@ function animateMetricCounter(element) {
     requestAnimationFrame(updateCounter);
 }
 
-// ===============================================
-// CONTACT FORM
-// ===============================================
-function initializeContactForm() {
-    const messageTextarea = document.querySelector('#message');
-    const characterCounter = document.querySelector('.character-counter .current');
-    
-    // Character counter for textarea
-    if (messageTextarea && characterCounter) {
-        messageTextarea.addEventListener('input', function() {
-            const length = this.value.length;
-            characterCounter.textContent = length;
-            
-            // Change color based on length
-            if (length > 450) {
-                characterCounter.style.color = '#ef4444';
-            } else if (length > 300) {
-                characterCounter.style.color = '#f59e0b';
-            } else {
-                characterCounter.style.color = 'var(--primary-color)';
-            }
-        });
-    }
-    
-    // Enhanced input animations
-    const inputs = document.querySelectorAll('.modern-contact-form input, .modern-contact-form select, .modern-contact-form textarea');
-    inputs.forEach(input => {
-        input.addEventListener('focus', function() {
-            this.parentElement.classList.add('focused');
-        });
-        
-        input.addEventListener('blur', function() {
-            this.parentElement.classList.remove('focused');
-        });
-    });
-}
 
 
 
@@ -503,55 +443,6 @@ function showCopySuccess() {
 
 // Anciennes fonctions supprimées - remplacées par les nouvelles fonctions modernes
 
-// ===============================================
-// FOOTER ANIMATIONS
-// ===============================================
-function initializeFooterAnimations() {
-    const footer = document.querySelector('.modern-footer');
-    if (!footer) return;
-    
-    // Intersection Observer pour les animations d'apparition
-    const footerElements = footer.querySelectorAll('.footer-brand-card, .footer-nav-column, .contact-premium-item');
-    
-    const footerObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }, index * 100);
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-    
-    footerElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-        footerObserver.observe(element);
-    });
-    
-    // Animation des particules en arrière-plan
-    animateFooterParticles();
-}
-
-function animateFooterParticles() {
-    const particles = document.querySelector('.footer-bg-particles');
-    if (particles) {
-        let offset = 0;
-        
-        function animate() {
-            offset += 0.5;
-            particles.style.transform = `translateY(${Math.sin(offset * 0.01) * 10}px)`;
-            requestAnimationFrame(animate);
-        }
-        
-        animate();
-    }
-}
 
 // ===============================================
 // SCROLL TO TOP FUNCTIONALITY
@@ -830,3 +721,28 @@ console.log(`
 
 Website loaded successfully!
 `);
+// Chargement dynamique des podcasts
+
+function initializePodcastSection() {
+    const podcastList = document.getElementById('podcast-grid');
+    if (podcastList) {
+        fetch('assets/podcasts.json')
+            .then(res => res.json())
+            .then(data => {
+                podcastList.innerHTML = data.map(podcast => `
+                    <div class="podcast-card">
+                        <a href="${podcast.url}" target="_blank" rel="noopener noreferrer">
+                            <img src="${podcast.img}" alt="${podcast.alt}">
+                            <div class="podcast-info">
+                                <h4>${podcast.title}</h4>
+                                <span>${podcast.platform}</span>
+                            </div>
+                        </a>
+                    </div>
+                `).join('');
+            })
+            .catch(() => {
+                podcastList.innerHTML = '<p>Impossible de charger les podcasts pour le moment.</p>';
+            });
+    }
+};
