@@ -1,3 +1,11 @@
+@media (max-width: 900px) {
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    }
+}
 
 /* ===============================================
    CSS CUSTOM PROPERTIES (VARIABLES)
@@ -556,7 +564,7 @@ html {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 8rem 0 4rem;
+    padding: 6rem 0 4rem;
 }
 .hero-background {
     position: absolute;
@@ -1030,7 +1038,7 @@ html {
     background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
     position: relative;
     overflow: hidden;
-    padding: 6rem 0;
+    padding: 2rem 0;
 }
 .about-background {
     position: absolute;
@@ -1305,7 +1313,7 @@ html {
 .services {
     background: white;
     position: relative;
-    padding: 6rem 0;
+    padding: 2rem 0;
 }
 .services-background {
     position: absolute;
@@ -1550,7 +1558,7 @@ html {
     color: white;
     position: relative;
     overflow: hidden;
-    padding: 8rem 0;
+    padding: 4rem 0;
 }
 .instagram-bg {
     position: absolute;
@@ -2303,7 +2311,7 @@ html {
     background: linear-gradient(135deg, var(--bg-light) 0%, #e2e8f0 100%);
     position: relative;
     overflow: hidden;
-    padding: 8rem 0;
+    padding: 2rem 0;
 }
 .contact-background {
     position: absolute;
@@ -4200,7 +4208,7 @@ html {
    =============================================== */
 .podcast-section {
     background: var(--bg-light, #f5f7fa);
-    padding: 4.5rem 0 3.5rem 0;
+    padding: 2rem 0 3.5rem 0;
 }
 .podcast-grid {
     display: grid;

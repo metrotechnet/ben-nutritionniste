@@ -11,6 +11,7 @@
 // ===============================================
 document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
+    
     initializeScrollAnimations();
     initializeInstagramSection();
     initializeScrollToTop();
@@ -59,16 +60,17 @@ function initializeNavigation() {
         if (mobileOverlay) mobileOverlay.classList.remove('active');
         document.body.classList.remove('menu-open');
     }
-    
+
+
     // Smooth scrolling for navigation links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
-            
+
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80;
+                const offsetTop = targetSection.offsetTop - 55;
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -86,8 +88,7 @@ function initializeNavigation() {
     // Scroll progress bar
     window.addEventListener('scroll', updateScrollProgress);
     
-    // Auto-hide navbar on scroll
-    initializeAutoHideNavbar();
+
 }
 
 function updateActiveNavLink() {
@@ -153,34 +154,6 @@ function initializeAutoHideNavbar() {
     }, { passive: true });
 }
 
-// ===============================================
-// SMOOTH SCROLLING
-// ===============================================
-function initializeSmoothScroll() {
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            if (href.startsWith('#')) {
-                e.preventDefault();
-                const targetId = href.substring(1);
-                const targetSection = document.getElementById(targetId);
-                
-                if (targetSection) {
-                    const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
-                    const targetPosition = targetSection.offsetTop - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
-}
 
 // ===============================================
 // SCROLL ANIMATIONS
@@ -607,8 +580,7 @@ function initializeLazyLoading() {
     }
 }
 
-// Initialize smooth scroll functionality
-initializeSmoothScroll();
+
 
 // Optional: Initialize lazy loading if needed
 // initializeLazyLoading();
