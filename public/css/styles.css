@@ -2157,7 +2157,7 @@ html {
     justify-content: center;
 
 }
-.primary-cta-btn {
+ .primary-cta-btn {
     position: relative;
     width:auto;
     background: linear-gradient(45deg, var(--secondary-color), var(--secondary-light));
@@ -2172,6 +2172,7 @@ html {
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .primary-cta-btn:hover {
     background: linear-gradient(45deg, var(--secondary-light), var(--secondary-color));
@@ -2182,6 +2183,18 @@ html {
 }
 .primary-cta-btn i {
     padding-right: 0.7em;
+}
+.primary-cta-btn span{
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+.center-btn-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2.2rem;
 }
 .secondary-cta-btn {
     background: rgba(255, 255, 255, 0.1);
@@ -2202,6 +2215,11 @@ html {
 }
 .secondary-cta-btn i {
     padding-right: 0.7em;
+}
+.secondary-cta-btn span{
+    text-align: center;
+    width: 100%;
+    display: block;
 }
 .btn-content {
     display: flex;
