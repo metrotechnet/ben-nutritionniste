@@ -11,7 +11,7 @@
 // ===============================================
 document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
-    
+    initializeYearStat();
     initializeScrollAnimations();
     initializeInstagramSection();
     initializeScrollToTop();
@@ -623,7 +623,18 @@ function initializeSkillBars() {
 // ===============================================
 // STATS ANIMATION
 // ===============================================
+function initializeYearStat() {
+    // Dynamically update years of experience since 2021
+    const startYear = 2021;
+    const currentYear = new Date().getFullYear();
+    const years = currentYear - startYear;
+    const stat = document.getElementById('years-experience');
+    if (stat) {
+        stat.textContent = years + stat.getAttribute('data-suffix');
+    }
+}
 function initializeStatsAnimation() {
+
     const statsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
