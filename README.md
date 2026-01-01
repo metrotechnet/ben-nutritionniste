@@ -129,7 +129,7 @@ window.open('https://instagram.com/ben.nutritionniste', '_blank');
 ## 📞 Support & Contact
 
 For technical support or website updates:
-- **Email**: contact@ben-nutritionniste.fr
+- **Email**: ben@bennutritionniste.com
 - **Instagram**: [@ben.nutritionniste](https://instagram.com/ben.nutritionniste)
 
 ## 📄 License
