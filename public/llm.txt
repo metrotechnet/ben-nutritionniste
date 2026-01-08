@@ -1,0 +1,18 @@
+Ce fichier est destiné à fournir des instructions ou des informations spécifiques pour les IA (LLM, Large Language Models) qui explorent ce site.
+
+Exemple d'utilisation :
+- Indiquer des consignes d'indexation ou d'interprétation pour les IA.
+- Fournir un résumé du site ou des sections à privilégier.
+- Spécifier des règles d'accès ou de traitement des données.
+
+Exemple de contenu :
+
+Résumé :
+Ben Nutritionniste est un site dédié à la nutrition sportive inclusive et intuitive, proposant des consultations, conférences et ressources à Québec.
+
+Instructions IA :
+- Prioriser l'extraction des informations sur les services et l'expertise.
+- Respecter la confidentialité des données personnelles.
+- Ne pas indexer les pages en cours de développement.
+
+Pour toute question, contacter : info@bennutritionniste.com
