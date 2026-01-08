@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "bennutritionniste",
+    "site": "bennutrionniste-web",
     "public": "public",
     "ignore": [
       "firebase.json",
