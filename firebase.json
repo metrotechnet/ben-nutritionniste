@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "bennutrionniste-web",
+    "site": "bennutritionniste",
     "public": "public",
     "ignore": [
       "firebase.json",
@@ -13,8 +13,7 @@
         "destination": "/index.html"
       }
     ]
-  }
-  ,
+  },
   "functions": {
     "source": "functions",
     "runtime": "nodejs22"

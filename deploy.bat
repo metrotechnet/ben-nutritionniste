@@ -1,3 +1,3 @@
 
-firebase deploy --only hosting --force
+firebase deploy --only hosting --force 
     
