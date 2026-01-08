@@ -1,0 +1,22 @@
+# robots.txt pour bennutritionniste.ca
+
+# Permettre à tous les robots d'indexer le site
+User-agent: *
+Allow: /
+
+# Bloquer l'indexation des fichiers de configuration et ressources internes
+Disallow: /llm.txt
+Disallow: /*.json$
+
+# Sitemap
+Sitemap: https://bennutritionniste.ca/sitemap.xml
+
+# Règles spécifiques pour les principaux moteurs de recherche
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay raisonnable pour éviter la surcharge
+Crawl-delay: 1
