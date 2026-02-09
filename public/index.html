@@ -988,6 +988,44 @@
         
     </section>
 
+    <!-- Politique de confidentialité -->
+    <section id="confidentialite" class="privacy-section">
+        <div class="privacy-container">
+            <h2><i class="fas fa-shield-alt"></i> Politique de confidentialité</h2>
+            <p>La protection de vos renseignements personnels est importante pour nous. Cette politique décrit les informations que nous recueillons et la façon dont elles sont utilisées, conformément à la <strong>Loi 25 du Québec</strong> sur la protection des renseignements personnels.</p>
+
+            <h3>1. Renseignements recueillis</h3>
+            <p>Lorsque vous acceptez les témoins (cookies), nous utilisons <strong>Firebase Analytics (Google)</strong> pour recueillir des données anonymes sur votre utilisation du site :</p>
+            <ul>
+                <li>Pages consultées et durée de visite</li>
+                <li>Type d'appareil, navigateur et système d'exploitation</li>
+                <li>Région géographique approximative</li>
+            </ul>
+            <p>Aucune information permettant de vous identifier personnellement n'est recueillie à moins que vous ne nous la fournissiez volontairement (ex.&nbsp;: formulaire de contact, courriel).</p>
+
+            <h3>2. Témoins (cookies)</h3>
+            <p>Les témoins analytiques sont activés <strong>uniquement après votre consentement explicite</strong>. Vous pouvez modifier votre choix à tout moment en cliquant sur « Gérer les témoins » dans le pied de page.</p>
+
+            <h3>3. Utilisation des données</h3>
+            <p>Les données recueillies servent exclusivement à :</p>
+            <ul>
+                <li>Améliorer le contenu et l'expérience utilisateur du site</li>
+                <li>Comprendre les tendances de fréquentation</li>
+            </ul>
+
+            <h3>4. Partage et conservation</h3>
+            <p>Les données analytiques sont traitées par Google (Firebase Analytics) sur des serveurs sécurisés. Aucune donnée n'est vendue ni partagée à des tiers à des fins commerciales. Les données sont conservées pour une durée maximale de 14 mois.</p>
+
+            <h3>5. Vos droits</h3>
+            <p>Vous avez le droit de retirer votre consentement, d'accéder à vos renseignements personnels ou d'en demander la suppression. Pour toute demande, communiquez avec nous à <a href="mailto:ben@bennutritionniste.com">ben@bennutritionniste.com</a>.</p>
+
+            <h3>6. Responsable de la protection des renseignements personnels</h3>
+            <p>Benoît Boulanger<br>Courriel&nbsp;: <a href="mailto:ben@bennutritionniste.com">ben@bennutritionniste.com</a></p>
+
+            <p style="margin-top:1.5rem;font-size:0.85rem;color:var(--text-lighter);">Dernière mise à jour&nbsp;: février 2026</p>
+        </div>
+    </section>
+
     <!-- Footer Premium -->
     <footer class="modern-footer">
         <div class="footer-copyright-bar" style="width:100%;text-align:center;padding:1.2rem 0 0.7rem 0; background:transparent; font-size:1.1rem; font-weight:500; letter-spacing:0.01em;">
@@ -1011,6 +1049,8 @@
                     <li><a href="#about">À propos</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#confidentialite"><i class="fas fa-shield-alt"></i> Confidentialité</a></li>
+                    <li><a href="#" onclick="openCookieSettings();return false;"><i class="fas fa-cookie-bite"></i> Gérer les témoins</a></li>
                 </ul>
             </div>
             <!-- Mes réseaux -->
@@ -1032,10 +1072,22 @@
 
     
 
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="cookie-consent-banner" role="dialog" aria-label="Consentement aux témoins">
+        <p>
+            <i class="fas fa-cookie-bite"></i>
+            Ce site utilise des témoins (cookies) analytiques pour améliorer votre expérience.
+            Aucune donnée personnelle n'est recueillie sans votre consentement.
+            <a href="#confidentialite">En savoir plus</a>
+        </p>
+        <div class="cookie-consent-actions">
+            <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Accepter</button>
+            <button id="cookie-refuse" class="cookie-btn cookie-btn-refuse">Refuser</button>
+        </div>
+    </div>
+
     <!-- Scripts -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
-    <script src="js/analytics.js"></script>
+    <script src="js/cookie-consent.js"></script>
     <script src="js/main.js?v=20251213171000"></script>
 </body>
 </html>
