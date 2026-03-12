@@ -4356,7 +4356,6 @@ html {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: clamp(2.2rem, 5vw, 3.4rem);
     font-weight: 700;
-    font-style: italic;
     color: #fff;
     text-align: center;
     text-transform: uppercase;

@@ -62,4 +62,4 @@ coverage/
 .eslintcache
 
 # Google Sheets shortcut
-podcasts-list.gsheet
+podcasts.gsheet
