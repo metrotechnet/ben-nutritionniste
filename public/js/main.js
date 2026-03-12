@@ -19,11 +19,36 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSkillBars();
     initializeInstagramMetrics();
     initializePodcastSection();
+    initializePrivacyAccordion();
 });
 
 // ===============================================
 // NAVIGATION FUNCTIONALITY
 // ===============================================
+
+// ===============================================
+// PRIVACY ACCORDION
+// ===============================================
+function initializePrivacyAccordion() {
+    const headers = document.querySelectorAll('.accordion-header');
+    headers.forEach(function(header) {
+        header.addEventListener('click', function() {
+            const item = this.closest('.accordion-item');
+            const isActive = item.classList.contains('active');
+            // Close all
+            document.querySelectorAll('.accordion-item').forEach(function(ai) {
+                ai.classList.remove('active');
+                ai.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+            });
+            // Toggle clicked
+            if (!isActive) {
+                item.classList.add('active');
+                this.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+}
+
 function initializeNavigation() {
     const mobileToggle = document.getElementById('mobile-toggle');
     const navMenu = document.getElementById('nav-menu');
@@ -704,28 +729,88 @@ console.log(`
 
 Website loaded successfully!
 `);
-// Chargement dynamique des podcasts
+// Chargement dynamique des podcasts depuis Google Sheets (fallback: podcasts.json)
+const GSHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1kq-aoF5cbEUCZ6fc3XJObwKHomvzJNwl2-pX5mU14Yk/gviz/tq?tqx=out:csv';
+
+function parseCSV(csv) {
+    const result = [];
+    let row = [];
+    let current = '';
+    let inQuotes = false;
+    for (let i = 0; i < csv.length; i++) {
+        const ch = csv[i];
+        if (ch === '"') {
+            if (inQuotes && csv[i + 1] === '"') { current += '"'; i++; }
+            else { inQuotes = !inQuotes; }
+        } else if (ch === ',' && !inQuotes) {
+            row.push(current); current = '';
+        } else if ((ch === '\n' || ch === '\r') && !inQuotes) {
+            if (current.length || row.length) { row.push(current); current = ''; }
+            if (row.length) { result.push(row); row = []; }
+            if (ch === '\r' && csv[i + 1] === '\n') i++;
+        } else {
+            current += ch;
+        }
+    }
+    if (current.length || row.length) { row.push(current); result.push(row); }
+    return result;
+}
+
+function csvToJson(csvText) {
+    const rows = parseCSV(csvText);
+    console.log('CSV parsed:', rows);
+    if (rows.length < 2) return [];
+    const headers = rows[0].map(h => h.trim().toLowerCase());
+    return rows.slice(1)
+        .filter(row => row.some(cell => cell.trim()))
+        .map(row => {
+            const obj = {};
+            headers.forEach((h, i) => { obj[h] = (row[i] || '').trim(); });
+            return obj;
+        });
+}
+
+function renderPodcasts(data, container) {
+    container.innerHTML = data.map(podcast => {
+        const alt = podcast.alt || podcast.title;
+        const img = podcast.img || (podcast.url.includes('youtube.com/watch')
+            ? 'https://img.youtube.com/vi/' + new URL(podcast.url).searchParams.get('v') + '/hqdefault.jpg'
+            : '');
+        return `
+            <div class="podcast-card">
+                <a href="${podcast.url}" target="_blank" rel="noopener noreferrer">
+                    <img src="${img}" alt="${alt}" loading="lazy">
+                    <div class="podcast-info">
+                        <h4>${podcast.title}</h4>
+                        <span>${podcast.platform}</span>
+                    </div>
+                </a>
+            </div>
+        `;
+    }).join('');
+}
 
 function initializePodcastSection() {
     const podcastList = document.getElementById('podcast-grid');
-    if (podcastList) {
-        fetch('assets/podcasts.json')
-            .then(res => res.json())
-            .then(data => {
-                podcastList.innerHTML = data.map(podcast => `
-                    <div class="podcast-card">
-                        <a href="${podcast.url}" target="_blank" rel="noopener noreferrer">
-                            <img src="${podcast.img}" alt="${podcast.alt}">
-                            <div class="podcast-info">
-                                <h4>${podcast.title}</h4>
-                                <span>${podcast.platform}</span>
-                            </div>
-                        </a>
-                    </div>
-                `).join('');
-            })
-            .catch(() => {
-                podcastList.innerHTML = '<p>Impossible de charger les podcasts pour le moment.</p>';
-            });
-    }
+    if (!podcastList) return;
+
+    fetch(GSHEET_CSV_URL)
+        .then(res => {
+            if (!res.ok) throw new Error('GSheet fetch failed');
+            return res.text();
+        })
+        .then(csv => {
+            const data = csvToJson(csv);
+            if (!data.length) throw new Error('Empty sheet');
+            renderPodcasts(data, podcastList);
+        })
+        .catch(() => {
+            // Fallback: fichier local
+            fetch('assets/podcasts.json')
+                .then(res => res.json())
+                .then(data => renderPodcasts(data, podcastList))
+                .catch(() => {
+                    podcastList.innerHTML = '<p>Impossible de charger les podcasts pour le moment.</p>';
+                });
+        });
 };

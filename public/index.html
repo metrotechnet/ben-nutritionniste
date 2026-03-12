@@ -147,6 +147,12 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a href="#conferences" class="nav-link" data-section="conferences">
+                                    <span class="nav-text">Conférences</span>
+                                    <div class="nav-indicator"></div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="#podcast" class="nav-link" data-section="podcast">
                                     <span class="nav-text">Podcast</span>
                                     <div class="nav-badge">
@@ -740,6 +746,103 @@
         </div>
     </section>
 
+    <!-- ===============================================
+         CONFÉRENCES SECTION - Offre de conférences
+         =============================================== -->
+    <section id="conferences" class="conferences-section" style="display:none">
+        <div class="conferences-bg"></div>
+        <div class="container">
+            <!-- En-tête -->
+            <div class="section-header">
+                <div class="section-badge" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);">
+                    <i class="fas fa-microphone-alt"></i>
+                    <span>Conférences</span>
+                </div>
+                <h2 class="conferences-main-title">Bien-être et performance</h2>
+                <p class="conferences-subtitle">Offre de conférence en nutrition sportive — 2026‑2027</p>
+            </div>
+
+            <!-- Grille des 3 niveaux -->
+            <div class="conferences-grid">
+
+                <!-- FONDATION -->
+                <div class="conference-card" data-level="fondation">
+                    <div class="conference-level-bar">
+                        <span class="level-icon"><img src="assets/logo/ben-brand-logo.svg" alt="" class="conf-logo" onerror="this.style.display='none'"></span>
+                        <div class="level-labels">
+                            <span class="level-active">FONDATION</span>
+                            <span class="level-separator">—</span>
+                            <span class="level-inactive">COMPÉTITION</span>
+                            <span class="level-separator">—</span>
+                            <span class="level-inactive">ÉLITE</span>
+                        </div>
+                        <div class="level-progress">
+                            <div class="progress-line filled"></div>
+                            <div class="progress-line"></div>
+                        </div>
+                    </div>
+                    <div class="conference-body">
+                        <h3>La nutrition sportive, inclusive et intuitive.</h3>
+                        <p>Ce n'est pas votre conférence sur la nutrition sportive habituelle&nbsp;: on y explore le lien entre poids et la santé, l'écoute du corps et les applications pratiques au quotidien dans un mode de vie actif.</p>
+                    </div>
+                </div>
+
+                <!-- COMPÉTITION -->
+                <div class="conference-card" data-level="competition">
+                    <div class="conference-level-bar">
+                        <span class="level-icon"><img src="assets/logo/ben-brand-logo.svg" alt="" class="conf-logo" onerror="this.style.display='none'"></span>
+                        <div class="level-labels">
+                            <span class="level-inactive">FONDATION</span>
+                            <span class="level-separator">—</span>
+                            <span class="level-active">COMPÉTITION</span>
+                            <span class="level-separator">—</span>
+                            <span class="level-inactive">ÉLITE</span>
+                        </div>
+                        <div class="level-progress">
+                            <div class="progress-line filled"></div>
+                            <div class="progress-line filled"></div>
+                        </div>
+                    </div>
+                    <div class="conference-body">
+                        <h3>Suppléments et tendances en nutrition sportive.</h3>
+                        <p>Axée sur la nutrition sportive et les suppléments alimentaires populaires. Idéale autant pour les athlètes récréatifs qu'avancés — tendances, mythes et performance.</p>
+                    </div>
+                </div>
+
+                <!-- ÉLITE -->
+                <div class="conference-card" data-level="elite">
+                    <div class="conference-level-bar">
+                        <span class="level-icon"><img src="assets/logo/ben-brand-logo.svg" alt="" class="conf-logo" onerror="this.style.display='none'"></span>
+                        <div class="level-labels">
+                            <span class="level-inactive">FONDATION</span>
+                            <span class="level-separator">—</span>
+                            <span class="level-inactive">COMPÉTITION</span>
+                            <span class="level-separator">—</span>
+                            <span class="level-active">ÉLITE</span>
+                        </div>
+                        <div class="level-progress">
+                            <div class="progress-line filled"></div>
+                            <div class="progress-line filled"></div>
+                        </div>
+                    </div>
+                    <div class="conference-body">
+                        <h3>Stratégies nutritionnelles avancées pour athlètes élites.</h3>
+                        <p>Exploration des stratégies nutritionnelles avancées pour athlètes d'élite — présentation des besoins spécifiques des athlètes de haut niveau, suppléments de performance et stratégies pour aller chercher le 1&nbsp;%.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA -->
+            <div class="center-btn-div">
+                <a href="mailto:ben@bennutritionniste.com" class="primary-cta-btn conferences-cta-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contacter-moi</span>
+                    <div class="btn-shine"></div>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- ===============================================
          PODCAST SECTION - Les podcasts de Ben
@@ -914,7 +1017,7 @@
                             <p>Posez vos questions nutritionnelles à mon agent IA et obtenez des réponses expertes instantanément.</p>
                         </div>
                         <div class="cta-actions">
-                            <a href="https://bennutritioniste-ai-206155864266.us-east4.run.app/" class="ai-cta-btn primary" target="_blank" rel="noopener noreferrer">
+                            <a href="https://imx-nutria.web.app/" class="ai-cta-btn primary" target="_blank" rel="noopener noreferrer">
                                 <div class="primary-cta-btn">
                                     <i class="fas fa-comments"></i>
                                     <span>Essayez l'Agent IA</span>
@@ -991,38 +1094,45 @@
     <!-- Politique de confidentialité -->
     <section id="confidentialite" class="privacy-section">
         <div class="privacy-container">
-            <h2><i class="fas fa-shield-alt"></i> Politique de confidentialité</h2>
-            <p>La protection de vos renseignements personnels est importante pour nous. Cette politique décrit les informations que nous recueillons et la façon dont elles sont utilisées, conformément à la <strong>Loi 25 du Québec</strong> sur la protection des renseignements personnels.</p>
+            <div class="accordion-item privacy-master-accordion">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title"><i class="fas fa-shield-alt"></i> Politique de confidentialité</span>
+                    <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                </button>
+                <div class="accordion-body privacy-full-body">
+                    <p>La protection de vos renseignements personnels est importante pour nous. Cette politique décrit les informations que nous recueillons et la façon dont elles sont utilisées, conformément à la <strong>Loi 25 du Québec</strong> sur la protection des renseignements personnels.</p>
 
-            <h3>1. Renseignements recueillis</h3>
-            <p>Lorsque vous acceptez les témoins (cookies), nous utilisons <strong>Firebase Analytics (Google)</strong> pour recueillir des données anonymes sur votre utilisation du site :</p>
-            <ul>
-                <li>Pages consultées et durée de visite</li>
-                <li>Type d'appareil, navigateur et système d'exploitation</li>
-                <li>Région géographique approximative</li>
-            </ul>
-            <p>Aucune information permettant de vous identifier personnellement n'est recueillie à moins que vous ne nous la fournissiez volontairement (ex.&nbsp;: formulaire de contact, courriel).</p>
+                    <h3>1. Renseignements recueillis</h3>
+                    <p>Lorsque vous acceptez les témoins (cookies), nous utilisons <strong>Firebase Analytics (Google)</strong> pour recueillir des données anonymes sur votre utilisation du site&nbsp;:</p>
+                    <ul>
+                        <li>Pages consultées et durée de visite</li>
+                        <li>Type d'appareil, navigateur et système d'exploitation</li>
+                        <li>Région géographique approximative</li>
+                    </ul>
+                    <p>Aucune information permettant de vous identifier personnellement n'est recueillie à moins que vous ne nous la fournissiez volontairement (ex.&nbsp;: formulaire de contact, courriel).</p>
 
-            <h3>2. Témoins (cookies)</h3>
-            <p>Les témoins analytiques sont activés <strong>uniquement après votre consentement explicite</strong>. Vous pouvez modifier votre choix à tout moment en cliquant sur « Gérer les témoins » dans le pied de page.</p>
+                    <h3>2. Témoins (cookies)</h3>
+                    <p>Les témoins analytiques sont activés <strong>uniquement après votre consentement explicite</strong>. Vous pouvez modifier votre choix à tout moment en cliquant sur «&nbsp;Gérer les témoins&nbsp;» dans le pied de page.</p>
 
-            <h3>3. Utilisation des données</h3>
-            <p>Les données recueillies servent exclusivement à :</p>
-            <ul>
-                <li>Améliorer le contenu et l'expérience utilisateur du site</li>
-                <li>Comprendre les tendances de fréquentation</li>
-            </ul>
+                    <h3>3. Utilisation des données</h3>
+                    <p>Les données recueillies servent exclusivement à&nbsp;:</p>
+                    <ul>
+                        <li>Améliorer le contenu et l'expérience utilisateur du site</li>
+                        <li>Comprendre les tendances de fréquentation</li>
+                    </ul>
 
-            <h3>4. Partage et conservation</h3>
-            <p>Les données analytiques sont traitées par Google (Firebase Analytics) sur des serveurs sécurisés. Aucune donnée n'est vendue ni partagée à des tiers à des fins commerciales. Les données sont conservées pour une durée maximale de 14 mois.</p>
+                    <h3>4. Partage et conservation</h3>
+                    <p>Les données analytiques sont traitées par Google (Firebase Analytics) sur des serveurs sécurisés. Aucune donnée n'est vendue ni partagée à des tiers à des fins commerciales. Les données sont conservées pour une durée maximale de 14 mois.</p>
 
-            <h3>5. Vos droits</h3>
-            <p>Vous avez le droit de retirer votre consentement, d'accéder à vos renseignements personnels ou d'en demander la suppression. Pour toute demande, communiquez avec nous à <a href="mailto:ben@bennutritionniste.com">ben@bennutritionniste.com</a>.</p>
+                    <h3>5. Vos droits</h3>
+                    <p>Vous avez le droit de retirer votre consentement, d'accéder à vos renseignements personnels ou d'en demander la suppression. Pour toute demande, communiquez avec nous à <a href="mailto:ben@bennutritionniste.com">ben@bennutritionniste.com</a>.</p>
 
-            <h3>6. Responsable de la protection des renseignements personnels</h3>
-            <p>Benoît Boulanger<br>Courriel&nbsp;: <a href="mailto:ben@bennutritionniste.com">ben@bennutritionniste.com</a></p>
+                    <h3>6. Responsable de la protection des renseignements personnels</h3>
+                    <p>Benoît Boulanger<br>Courriel&nbsp;: <a href="mailto:ben@bennutritionniste.com">ben@bennutritionniste.com</a></p>
 
-            <p style="margin-top:1.5rem;font-size:0.85rem;color:var(--text-lighter);">Dernière mise à jour&nbsp;: février 2026</p>
+                    <p style="margin-top:1.5rem;font-size:0.85rem;color:var(--text-lighter);">Dernière mise à jour&nbsp;: février 2026</p>
+                </div>
+            </div>
         </div>
     </section>
 
