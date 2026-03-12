@@ -4394,13 +4394,14 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
     margin-bottom: 1.5rem;
 }
 .conf-logo {
     width: 36px;
     height: 36px;
-    margin-bottom: 0.5rem;
     filter: brightness(0) invert(1);
+    flex-shrink: 0;
 }
 .level-labels {
     display: flex;
@@ -4411,7 +4412,6 @@ html {
     text-transform: uppercase;
     letter-spacing: 0.06em;
     font-weight: 400;
-    margin-bottom: 0.75rem;
 }
 .level-active {
     font-weight: 700;
@@ -4553,7 +4553,6 @@ html {
     .conf-logo {
         width: 24px;
         height: 24px;
-        margin-bottom: 0.3rem;
     }
     .conference-level-bar {
         margin-bottom: 1rem;
