@@ -1,0 +1,3 @@
+@echo off
+echo Starting local server on http://localhost:3000 ...
+npx --yes serve public

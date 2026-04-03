@@ -20,7 +20,31 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeInstagramMetrics();
     initializePodcastSection();
     initializePrivacyAccordion();
+    redirectToWaitlist();
 });
+
+// ===============================================
+// REDIRECT TO WAITLIST
+// ===============================================
+function redirectToWaitlist() {
+    var waitlistUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfzb4pn6nYRjkWP2ICTz0rUS-T73LvYQriWreJ726XY7BWlKA/viewform?usp=publish-editor';
+
+    document.querySelectorAll('a').forEach(function(link) {
+        var href = link.getAttribute('href');
+        if (!href) return;
+
+        if (
+            href.indexOf('benoit-boulanger-dtp.square.site') !== -1 
+            // href.indexOf('benoit-boulanger-dtp.square.site') !== -1 ||
+            // href.indexOf('mailto:') === 0 ||
+            // href.indexOf('tel:') === 0
+        ) {
+            link.setAttribute('href', waitlistUrl);
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+        }
+    });
+}
 
 // ===============================================
 // NAVIGATION FUNCTIONALITY
